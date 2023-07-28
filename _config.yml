@@ -27,6 +27,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 # ----------
 # https://github.com/daattali/beautiful-jekyll/blob/master/_config.yml
+
 navbar-links:
   About Me: "about"
   RE Resources:
@@ -66,6 +67,16 @@ feed_show_tags: true
 post_search: true
 edit_page_button: true
 navbar-var-length: true
+
+page-col: "#121212"
+text-col: "#FFFFFF"
+footer-col: "#777777"
+footer-text-col: "#EAEAEA"
+
+site-css:
+  - "/assets/css/custom_styles.css"
+# ----------
+
 domain: talsk.github.io
 baseurl: "/" # the subpath of your site, e.g. /blog
 # url: "https://talsk.github.io" # the base hostname & protocol for your site, e.g. http://example.com
