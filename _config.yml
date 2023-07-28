@@ -27,6 +27,45 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 # ----------
 # https://github.com/daattali/beautiful-jekyll/blob/master/_config.yml
+navbar-links:
+  About Me: "about"
+  RE Resources:
+    - Linux RE 101: "https://github.com/michalmalik/linux-re-101"
+    - RE for beginners: "https://beginners.re"
+    - Malware Analysis Books: "https://github.com/rshipp/awesome-malware-analysis#books"
+    - OS & Exploitation: "https://drive.google.com/drive/folders/1TwhpH9p3KL49XPYkvriKPlV3iPQ9X9Lb?fbclid=IwAR3jxAzsVbLAeORTa1TA8xayBmNZqE4FE4fH4Y0Lfg11VDkoe5ifKaLc2L8"
+    - Intro to Kernel Exploitation: "https://pwning.systems/posts/an-introduction-to-kernel-exploitation-part1/"
+  CS Resources:
+    - Open Source Society University: "https://github.com/ossu/computer-science"
+    - Coding Interview University: "https://github.com/jwasham/coding-interview-university"
+    - Awsome Computer Science: "https://github.com/quabanc/awesome-computer-science"
+  Challenges Done:
+    - H4CK1NG G00GL3 (CR 8): "https://h4ck1ng.google/"
+    - Crypto Pals (CR 8): "https://cryptopals.com/"
+    - Hack The Vote 2016 (CR 5): "https://ctftime.org/event/345"
+    - picoCTF 2014 (CR 1): "https://picoctf.org/competitions/past.html"
+    - challenges.re (CR ?): "https://challenges.re"
+
+social-network-links:
+  rss: true
+  twitter: TalSkverer
+  mastodon: infosec.exchange/@talsk
+  linkedin: reverser
+  github: TalSk
+
+rss-description: Your favorite source of silliness
+
+share-links-active:
+  twitter: true
+  linkedin: true
+  mastodon: true
+
+excerpt_length: 100
+feed_show_excerpt: false
+feed_show_tags: true
+post_search: true
+edit_page_button: true
+navbar-var-length: true
 domain: talsk.github.io
 baseurl: "/" # the subpath of your site, e.g. /blog
 # url: "https://talsk.github.io" # the base hostname & protocol for your site, e.g. http://example.com
