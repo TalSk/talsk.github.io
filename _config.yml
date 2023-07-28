@@ -79,8 +79,8 @@ site-css:
 
 domain: talsk.github.io
 baseurl: "/" # the subpath of your site, e.g. /blog
-# url: "https://talsk.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-url: "http://localhost"
+url: "https://talsk.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# url: "http://localhost"
 # twitter_username: TalSkverer
 # github_username:  TalSk
 assets_dir: assets
