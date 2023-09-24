@@ -6,104 +6,215 @@
   border-radius: 3px; /* Add rounded corners for inline code */
 }
 
-/*.highlight table td { padding: 5px; }*/
-/*.highlight table pre { margin: 0; }*/
-.highlight pre {
-  font-family: 'Courier New', monospace;
-  font-size: 14px;
-  line-height: 1.5;
-  background-color: #1e1e1e; /* Dark background color */
-  color: #d4d4d4; /* Light text color */
-  padding: 10px;
-  border-radius: 5px;
-  overflow-x: auto;
+
+.highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nn {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nl {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ni {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .bp {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vg {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vi {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .w {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
 }
 
-/* Style for each line of code */
-.g {
-  display: block;
+.language-json .err {
+  color: #75715e;
+  background-color: #272822;
+
 }
 
-/* Line numbers */
-.n {
-  display: inline-block;
-  text-align: right;
-  user-select: none;
-  opacity: 1; /* Slightly reduced opacity for line numbers */
-  color: #9e9e9e; /* Light gray color for line numbers */
-}
 
-/* Comments */
-.cm {
-  color: #6A9955; /* Green color for comments */
-}
+/* ... */
 
-/* Punctuation */
-.p {
-  color: #d4d4d4; /* Light gray color for punctuation */
-}
-
-/* Properties, Tags, Constants, Symbols, Deleted elements */
-.c1,
-.c,
-.m,
-.mi,
-.mo,
-.k {
-  color: #B6576A; /* Red color for properties and tags */
-}
-
-/* Selectors, Attribute Names, Strings, Chars, Builtins, URLs, Inserted elements */
-.s,
-.e,
-.s2,
-.sb,
-.sc,
-.sd,
-.s1,
-.se,
-.sh,
-.si,
-.sx,
-.sr {
-  color: #B6576A; /* Red color for selectors and strings */
-}
-
-/* Numbers */
-.nu {
-  color: #94B979; /* Light green color for numbers */
-}
-
-/* Booleans */
-.b {
-  color: #45A8B0; /* Cyan color for booleans */
-}
-
-/* Keywords */
-.kw {
-  color: #569cd6; /* Blue color for keywords */
-}
-
-/* At rules, Attribute values, Functions, Class names */
-.at,
-.atv,
-.fn,
-.cl {
-  color: #F0C040; /* Gold color for functions and class names */
-}
-
-/* Language-specific styles for C# */
-.language-csharp .kd {
-  color: #569cd6; /* Blue color for C# access modifiers */
-}
-.language-csharp .nf {
-  color: #F0C040; /* Gold color for C# method names */
-}
-
-/* Add more styles as needed for different code elements */
-
-/* Style for the currently selected line (optional) */
-/* Rouge uses the 'line-highlight' class for the currently selected line */
-.line-highlight {
-  background-color: #2b2b2b; /* Darker background color for the currently selected line */
+.pagination .page-item .page-link {
+  background-color: #777;
 }
