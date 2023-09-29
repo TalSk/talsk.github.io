@@ -116,3 +116,16 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+#################################
+# --- Web Analytics Section --- #
+#################################
+
+# Fill in your Google Analytics tag ID (or "Measurement ID") to track your website usage
+gtag: "G-BYLZBS5HTS"
+
+# Fill in your Cloudflare Analytics beacon token to track your website using Cloudflare Analytics
+cloudflare_analytics: "2dd6b720331b48568cb6ae8cc225a06b"
+
+# Google Tag Manager ID
+#gtm: ""
