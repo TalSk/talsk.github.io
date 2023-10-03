@@ -7,7 +7,7 @@ tags: [RE, dotnet, patching, gaming]
 readtime: true
 cover-img: ["/assets/images/Windward-Savefile/Windward-Savefile-Test-Rich - Copy.png"]
 thumbnail-img: "/assets/images/Windward-Savefile/Windward-Savefile-Windward.png"
-share-img: "/assets/images/Windward-Savefile/Windward-Savefile-Windward.png"
+share-img: "/assets/images/Windward-Savefile/Windward-Savefile-Windward-Share.jpg"
 ---
 
 ### Preface
