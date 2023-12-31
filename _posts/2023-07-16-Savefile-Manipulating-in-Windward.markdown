@@ -2,7 +2,7 @@
 layout: post
 title:  "Savefile Manipulating in Windward Game"
 subtitle: "Get Rich Quick Scheme: 1 Million Gold In Just a Few Clicks"
-date:   2023-09-28 18:05:34 +0300
+date:   2023-12-31 16:05:34 +0300
 tags: [RE, dotnet, patching, gaming]
 readtime: true
 cover-img: ["/assets/images/Windward-Savefile/Windward-Savefile-Test-Rich - Copy.png"]
@@ -284,7 +284,7 @@ public static void SetResource(string name, int val)
   }
 ```
 
-As you can see, this function takes the `Resources` node and assigns it as a child using the `name` parameter with the new value determined by `val`. But here's the twist: instead of using the primitive `int` type of `val` as we expected, it used `ObsInt`.
+As you can see, this function takes the `Resources` node and assigns it the child matching the `name` parameter with the new value determined by `val`. But here's the twist: instead of using the primitive `int` type of `val` as we expected, it used `ObsInt`.
 
 Jumping over to the `ObsInt` class, we immediately unveiled the secret - it employs two functions named `Obfuscate` and `Restore` to transform ordinary integers into the `ObsInt` type:
 
