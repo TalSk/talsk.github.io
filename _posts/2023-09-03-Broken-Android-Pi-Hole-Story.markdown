@@ -3,7 +3,7 @@ layout: post
 title:  "Using Your Dead Phone to Get Rid of Ads at Home"
 subtitle: "The story of how I destroyed my OnePlus 5T"
 date:   2024-02-17 10:13:01 +0300
-tags: []
+tags: [DYI, PiHole, Smartphone, ADB, OnePlus]
 readtime: true
 cover-img: ["/assets/images/Broken-OnePlus/Broken-OnePlus-cover.png"]
 thumbnail-img: "/assets/images/Broken-OnePlus/Broken-OnePlus-thumbnail2.jpg"
