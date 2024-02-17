@@ -7,6 +7,7 @@ tags: []
 readtime: true
 cover-img: ["/assets/images/Broken-OnePlus/Broken-OnePlus-cover.png"]
 thumbnail-img: "/assets/images/Broken-OnePlus/Broken-OnePlus-thumbnail2.jpg"
+share-img: "/assets/images/Broken-OnePlus/Broken-OnePlus-Measured.jpg"
 ---
 
 Similarly to the common cooking recipes seen online, I'll start this "How-to-get-rids-of-ads" recipe with a heartfelt and winding story.
