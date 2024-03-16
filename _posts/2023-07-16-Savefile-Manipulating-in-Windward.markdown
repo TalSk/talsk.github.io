@@ -65,7 +65,7 @@ This resolved our first challenge. To surmount the second hurdle, however, I had
 
 My goal was modest - provide everyone with a few initial levels and some extra resources, accelerating the game's pace. Thus, we venture into the realm of savefile editing.
 
-## Chapter 2 - All the Paths Lead to Reverse Engineering
+## Chapter 2 - All the Paths Lead To Reverse Engineering
 
 In life, one of the most valuable lessons is this: why work hard if you can just Google it? Indeed, back in 2014, a kind soul posed the question ["Is it possible to cheat and give yourself money"](https://steamcommunity.com/app/326410/discussions/0/626329186961056107/) on the Windward forums. 
 
