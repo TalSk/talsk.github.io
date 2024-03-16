@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Savefile Manipulating in Windward Game"
-subtitle: "Get Rich Quick Scheme: 1 Million Gold In Just a Few Clicks"
+subtitle: "Get rich quick scheme: 1 million gold in just a few clicks"
 date:   2023-12-31 16:05:34 +0300
 tags: [RE, dotnet, patching, gaming]
 readtime: true
