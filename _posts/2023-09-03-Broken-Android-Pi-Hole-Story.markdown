@@ -12,7 +12,7 @@ share-img: "/assets/images/Broken-OnePlus/Broken-OnePlus-Measured.jpg"
 
 Similarly to the common cooking recipes seen online, I'll start this "How-to-get-rids-of-ads" recipe with a heartfelt and winding story.
 
-# Part 1 - In which we start at a low
+# Part 1 - In Which We Start At a Low
 
 On a warm and pleasant evening, June 20th, 2019 to be exact, I felt it was a perfect time for a run. A few days earlier, I had bought a phone holder for jogging – one of those you strap to your arm designed specifically for my brand-new OnePlus 5T. However, there was a slight hiccup: they hadn't considered the addition of a protective case in the design.
 
@@ -33,7 +33,7 @@ An hour or two later, the screen had turned completely pink and the dot was the 
 
 Feeling bad about the whole ordeal, I threw the thing into my electronics drawer and forgot about it.
 
-# Part 2 - In which an idea is born
+# Part 2 - In Which an Idea Is Born
 
 Fast forward to 2020, I came across an article about deploying a tool called Pi-Hole on a Raspberry Pi to block ads at home. (Shoutout to Ran Bar-Zik for [this post](https://internet-israel.com/%d7%9e%d7%93%d7%a8%d7%99%d7%9b%d7%99%d7%9d/raspberrypi/%d7%94%d7%aa%d7%a7%d7%a0%d7%94-%d7%95%d7%a9%d7%99%d7%9e%d7%95%d7%a9-%d7%91-pi-hole-%d7%9b%d7%a9%d7%a8%d7%aa-dns/)).
 
@@ -72,7 +72,7 @@ That's a good question, and 2 hours into scratching the bottom of the internet b
 
 While this **screenshot method** (the name by me) is brilliant, it implies you're able to read files from the smartphone. This needs switching the phone to *File Transfer* mode after connecting to the PC. While difficult, switching to this mode is much (much) more achievable than blindly enabling *USB debugging*.
 
-# Part 3 - In which the recipe is finally given
+# Part 3 - In Which the Recipe Is Finally Given
 
 Here's the process of converting a functional smartphone (whose screen's broken) to block ads:
 
@@ -84,7 +84,7 @@ Here's the process of converting a functional smartphone (whose screen's broken)
 
 Every step is easy given that the previous one was done. Well, except for step 1. I was pretty sure enabling MTP only requires a very limited number of screen presses, the problem is I needed to know approximately where to press.
 
-## Step 1 - YouTube to the rescue
+## Step 1 - YouTube To the Rescue
 
 I went to trusty old YouTube and searched for video tutorials for enabling *File Transfer* on the OnePlus 5T. [This one](https://www.youtube.com/watch?v=Gc7fk9hNWFY) clearly shows there's a notification that pops once you connect the USB cable. You press it twice to open the mode menu and *File Transfer* is the top option.
 
@@ -94,7 +94,7 @@ That didn't work.
 
 I knew I needed to come up with an indicator that the intermediate steps were successful. I realized that if I swiped down, pressing on the top right side of the screen should make the torch light up. Using this as a way to verify that I'm looking at notifications, I eventually managed to press the right places and heard my PC go *tang!*. A new internal storage popped up - indicating that the phone has switched to *File Transfer* mode! 🎉
 
-## Step 2 - The **screenshot method**
+## Step 2 - The **Screenshot Method**
 
 I wouldn't have believed you if you told me that someday I would take a measuring tape and sticky notes and use them to figure out where to press on a smartphone so I could enable *USB debugging*, but here we are.
 
@@ -429,7 +429,7 @@ if __name__ == '__main__':
     main()
 ```
 
-### Appendix C - footnotes
+### Appendix C - Footnotes
 
 
 [^1]: It was at this point I decided to move to [Authy](https://authy.com/) which supports syncing authenticator codes to the cloud and other devices (about 4 years before [Google Authenticator followed suit](https://security.googleblog.com/2023/04/google-authenticator-now-supports.html)), circumventing the terrible consequence of breaking your phone and losing access to your authenticator codes.
