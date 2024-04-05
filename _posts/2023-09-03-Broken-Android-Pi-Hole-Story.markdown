@@ -84,7 +84,7 @@ Here's the process of converting a functional smartphone (whose screen's broken)
 
 Every step is easy given that the previous one was done. Well, except for step 1. I was pretty sure enabling MTP only requires a very limited number of screen presses, the problem is I needed to know approximately where to press.
 
-## Step 1 - YouTube To the Rescue
+## Step 1 - YouTube to the Rescue
 
 I went to trusty old YouTube and searched for video tutorials for enabling *File Transfer* on the OnePlus 5T. [This one](https://www.youtube.com/watch?v=Gc7fk9hNWFY) clearly shows there's a notification that pops once you connect the USB cable. You press it twice to open the mode menu and *File Transfer* is the top option.
 
