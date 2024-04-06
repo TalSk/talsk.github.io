@@ -2,7 +2,7 @@
 layout: post
 title:  "Breaking Pokémon Go Anti-Cheating System (1)"
 subtitle: "Filling the Pokédex was never that easy"
-date:   2024-04-09 18:05:34 +0300
+date:   2024-04-06 11:05:34 +0300
 tags: [RE, gaming, android, Pokémon-go]
 readtime: true
 cover-img: ["/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-cover4.png"]
