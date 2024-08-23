@@ -2,7 +2,7 @@
 layout: post
 title:  "H4CK1NG G00GL3 - EP0C01"
 subtitle: "Episode 000 - Challenge 01 - Playing Chess"
-date:   2024-08-21 18:05:34 +0300
+date:   2024-08-23 16:05:34 +0300
 tags: [CTF, web-exploitation, reverse-engineering, research, google]
 readtime: true
 cover-img: [""]
