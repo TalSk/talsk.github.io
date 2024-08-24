@@ -3,11 +3,11 @@ layout: post
 title:  "H4CK1NG G00GL3 - EP0C01"
 subtitle: "Episode 000 - Challenge 01 - Playing Chess"
 date:   2024-08-23 16:05:34 +0300
-tags: [CTF, web-exploitation, reverse-engineering, research, google]
+tags: [CTF, web-exploitation, research, hacking-google, chess]
 readtime: true
-cover-img: [""]
-thumbnail-img: "/assets/images/Hacking-Google/thumbnail.png"
-share-img: "/assets/images/Hacking-Google/thumbnail.png"
+cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
+thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
+share-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
 ---
 
 A web site with some cool matrix-looking chess. Let's try to play a little.
@@ -862,4 +862,7 @@ Stockmove moved the same peon another step forward - ha!
 
 One last move of my queen and the game's ended in a 4 move mate, and the challenge has given out its flag.
 
-`ZOMG How did you defeat my AI :(. You definitely cheated.`
+<figure>
+  <img style="display:block; margin-left: auto; margin-right: auto" src="/assets/images/Hacking-Google/Hacking-Google-Ep00-C01-won-board.png" title="">
+  <figcaption style="text-align: center; font-size:14px; color: gray"><i>ZOMG How did you defeat my AI :(. You definitely cheated.</i></figcaption>
+</figure>
