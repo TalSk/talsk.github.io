@@ -263,29 +263,29 @@ sub find_lines {
 sub list_to_tmpl {
 sub main_page {
 ```
-`term=html`
+`term=html`:
 ```perl
 use HTML::Template;
   my $tmpl = HTML::Template->new(filename => "templates/default.html");
 ```
-`term=if (`
+`term=if (`:
 ```perl
   if (length($needle) >= 4) {
       if (index(lc($line), lc($needle)) >= 0) {
 if (($pfile // "") eq "") {
 ```
-`term=needle`
+`term=needle`:
 ```perl
   my ($filename, $needle) = @_;
   if (length($needle) >= 4) {
       if (index(lc($line), lc($needle)) >= 0) {
 ```
-`term=open`
+`term=open`:
 ```perl
   opendir my $dir, $dirname;
     open(my $fh, "logs/".$filename);
 ```
-`term=line`
+`term=line`:
 ```perl
 sub find_lines {
     while (my $line = <$fh>) {
@@ -293,12 +293,12 @@ sub find_lines {
         push(@results, $line);
   print join("", find_lines($pfile, scalar $q->param("term")));
 ```
-`term=my (`
+`term=my (`:
 ```perl
   my ($filename, $needle) = @_;
   my ($tmpl_name, @elems) = @_;
 ```
-`term=file`
+`term=file`:
 ```perl
 sub files_in_dir {
   my @files = grep $_ ne "." && $_ ne "..", readdir $dir;
@@ -311,7 +311,7 @@ my $pfile = $q->param("file");
 if (($pfile // "") eq "") {
   print join("", find_lines($pfile, scalar $q->param("term")));
 ```
-`term=tmpl`
+`term=tmpl`:
 ```perl
 sub list_to_tmpl {
   my ($tmpl_name, @elems) = @_;
@@ -320,7 +320,7 @@ sub list_to_tmpl {
   $tmpl->param(FILES => list_to_tmpl("NAME", files_in_dir("logs")));
   return $tmpl->output;
 ```
-`term=elem`
+`term=elem`:
 ```perl
   my ($tmpl_name, @elems) = @_;
   while (@elems) {
