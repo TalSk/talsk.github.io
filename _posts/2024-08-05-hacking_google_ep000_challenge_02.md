@@ -2,7 +2,7 @@
 layout: post
 title:  "H4CK1NG G00GL3 - EP0C02"
 subtitle: "Episode 000 - Challenge 02 - Operation Aurora"
-date:   2024-08-24 16:05:34 +0300
+date:   2024-08-24 15:05:34 +0300
 tags: [CTF, web-exploitation, research, hacking-google, aurora]
 readtime: true
 cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
