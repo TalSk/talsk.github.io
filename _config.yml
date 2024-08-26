@@ -96,6 +96,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-toc
 
 # Exclude from processing.
 # The following items will not be processed, by default.

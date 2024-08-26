@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_with_toc
 title:  "Savefile Manipulating in Windward Game"
 subtitle: "Get rich quick scheme: 1 million gold in just a few clicks"
 date:   2023-12-31 16:05:34 +0300
@@ -8,6 +8,7 @@ readtime: true
 cover-img: ["/assets/images/Windward-Savefile/Windward-Savefile-Test-Rich - Copy.png"]
 thumbnail-img: "/assets/images/Windward-Savefile/Windward-Savefile-Windward.png"
 share-img: "/assets/images/Windward-Savefile/Windward-Savefile-Windward-Share.jpg"
+toc: true
 ---
 
 ### Preface

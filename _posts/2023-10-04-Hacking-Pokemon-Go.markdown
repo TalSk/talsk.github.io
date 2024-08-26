@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_with_toc
 title:  "Breaking Pokémon Go Anti-Cheating System (1)"
 subtitle: "Filling the Pokédex was never that easy"
 date:   2024-04-06 11:05:34 +0300
@@ -8,6 +8,7 @@ readtime: true
 cover-img: ["/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-cover4.png"]
 thumbnail-img: "/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-thumbnail.png"
 share-img: "/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-thumbnail.png"
+toc: true
 ---
 
 # Intro
