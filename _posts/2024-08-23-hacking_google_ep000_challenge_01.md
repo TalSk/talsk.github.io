@@ -7,7 +7,7 @@ tags: [CTF, web-exploitation, research, hacking-google, chess]
 readtime: true
 cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
 thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
+share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep00-C01-won-board.png"
 ---
 
 A web site with some cool matrix-looking chess. Let's try to play a little.
