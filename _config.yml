@@ -21,9 +21,8 @@
 title: Tal's Tech Treks
 author: Tal Skverer
 email: tal.skverer@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Welcome! This is a safe place for me to dump all the silly research endeavors I take on, and pretend that they're interesting enough for others to read.
-  The real reason this exist is to force me to document it so it's possible to fix once it breaks down :-).
+description: Tal Skverer Personal Blog on his Tech Treks. 
+# >- # this means to ignore newlines until "baseurl:"
 
 # ----------
 # https://github.com/daattali/beautiful-jekyll/blob/master/_config.yml
