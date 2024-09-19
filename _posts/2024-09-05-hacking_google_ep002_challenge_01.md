@@ -68,9 +68,11 @@ Judging by the locations of the different pixels, it seems almost the entire fir
 When I say almost all, that's because sometimes the different pixel location seem to "jump" to the next pixel. Odd.
 
 I inspected a few of the pixel differences:
-`Pixel at (717, 0) changed - from (0, 0, 0, 0) to (1, 0, 0, 1) 
+```
+Pixel at (717, 0) changed - from (0, 0, 0, 0) to (1, 0, 0, 1) 
 Pixel at (797, 1) changed - from (0, 0, 0, 0) to (1, 0, 0, 0) 
-Pixel at (1322, 0) changed - from (0, 0, 0, 0) to (0, 1, 1, 0)`
+Pixel at (1322, 0) changed - from (0, 0, 0, 0) to (0, 1, 1, 0)
+```
 
 In those instances and all the cases I looked through, the original pixel was all 0s - so a black pixel, which is completely transparent (controlled by the fourth value of the tuple).
 
