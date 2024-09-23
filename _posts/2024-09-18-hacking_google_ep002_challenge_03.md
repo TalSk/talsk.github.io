@@ -2,12 +2,12 @@
 layout: post
 title:  "H4CK1NG G00GL3 - EP2C03"
 subtitle: "Episode 002 - Challenge 03 - I Shell Break Free"
-date:   2024-09-22 16:05:34 +0300
+date:   2024-09-23 16:05:34 +0300
 tags: [CTF, RE, research, hacking-google, shell, bash, sandbox]
 readtime: true
 cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
 thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
+share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep02-C03-welcome.png"
 ---
 
 In this challenge, there was no link to a website or to download anything. Instead, there's a simple command - 
