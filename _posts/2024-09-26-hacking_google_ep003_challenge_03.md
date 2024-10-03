@@ -7,7 +7,7 @@ tags: [CTF, research, hacking-google, reverse-engineering, android, jadx, qrcode
 readtime: true
 cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
 thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
+share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep03-C3-corgi.png"
 ---
 
 Aaaand we're back to zipped challenges. This time, it's an image and an apk file.
