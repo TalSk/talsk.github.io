@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "H4CK1NG G00GL3 - EP4C02"
-subtitle: "Episode 004 - Challenge 02 - Custom Crypto Carelessness"
+subtitle: "Episode 004 - Challenge 02 - Custom Auth Carelessness"
 date:   2024-10-12 11:05:34 +0300
 tags: [CTF, research, hacking-google, cryptography]
 readtime: true
