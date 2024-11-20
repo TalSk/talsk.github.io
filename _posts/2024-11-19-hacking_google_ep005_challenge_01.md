@@ -7,7 +7,7 @@ tags: [CTF, RE, research, hacking-google, tamagotchi, binary-analysis, bmp]
 readtime: true
 cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
 thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
+share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep05-C1-done.bmp"
 ---
 
 It's episode 5, baby! This is the last one on this CTF, and what a road it has been so far!
