@@ -32,9 +32,9 @@ Anyway, let's go for the challenges write-up!
 
 ## AI - Sandcastle (hard, pwn)
 
-In here you get a link `https://sandcastle.appsecil.ctf.today/mcp`, which very muchleads you to think about MCP - the new cool standard in the block.
+In this challenge you are given a link `https://sandcastle.appsecil.ctf.today/mcp`, which immediately leads you to think about MCP - the new cool standard on the block.
 
-Luckily, I played a lot with MCP the past few months, so I rushed to [MCP Inspector](https://github.com/modelcontextprotocol/inspector) which just by running `npx @modelcontextprotocol/inspector` you can start up a local instance and connect it to whatever MCP server you want.
+Luckily for me, I played a lot with MCP the past few months, so I rushed to [MCP Inspector](https://github.com/modelcontextprotocol/inspector) which just by running `npx @modelcontextprotocol/inspector` you can start up a local instance and connect it to whatever MCP server you want.
 
 Connecting (with Streamable HTTP) to the server, it exposes a `listFiles` resource, which gives us the files in the MCP server directory
 
