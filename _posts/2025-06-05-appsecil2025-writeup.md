@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "appsecil2025 CTF - Writeup"
-subtitle: "A writeup on all challeges I solved in the 2025 OWASP CTF"
+title:  "AppSec IL 2025 CTF - Writeup"
+subtitle: "A writeup on all challenges I solved in the 2025 OWASP CTF"
 date:   2025-06-04 10:05:34 +0300
 tags: [CTF, appsecil2025, write-up, hacking]
 readtime: true
@@ -10,31 +10,31 @@ thumbnail-img: "/assets/images/Appsecil2025-Writeup/Appsecil2025-Writeup-share.p
 share-img: "/assets/images/Appsecil2025-Writeup/Appsecil2025-Writeup-share.png"
 ---
  
-This year's AppSec IL 2025 had a CTF accompany it during the 3 days before the event.
+This year's AppSec IL 2025 had a CTF accompanying it during the 3 days before the event.
 
-I participated alone (hence why my team was "Loner"), and ended up being 4th place! Much better results than I expected.
+I participated alone (hence why my team was "Loner"), and ended up placing 4th! Much better results than I expected.
 
-You might notice that in the write-up I have 12 solved challenges whereas in the event I have 11 - that's because I solved the last one just about when the event ended and it didn't count :( All because of a silly mistake in the C++ code. I blame Claude.
+You might notice that in the writeup I have 12 solved challenges whereas in the event I have 11 - that's because I solved the last one just about when the event ended and it didn't count :( All because of a silly mistake in the C++ code. I blame Claude.
 
 Also on that note - this time around I heavily used ChatGPT, Claude desktop with some useful MCP servers (mostly to interact with my filesystem, run commands and WSL) and Cursor when source code was available. 
 
-These AI tools didn't really manage to solve challenges on their own (maybe just the one whic was really easy), but they instead were incredible in doing the following 3 things:
+These AI tools didn't really manage to solve challenges on their own (maybe just the one which was really easy), but they were instead incredible at doing the following 3 things:
 
-1. Making writing code *extremely* fast. That really compounded over time and made up for the fact I played alone. This was especially helpful since many, *many* challenges become so much easier if you run a local version of them, so setting the requirements, adding some logging prints, running the server became infinitely times easier when I can just tell Cursor to do that on YOLO mode while I go do another challenge meanwhile. It also greatly helped with languages I'm less familiar with.
-2. Helping me come up with new ideas on how to tackle a problem when I got stuck. This was by far the most impactful on the harder challenges. Something about writing a good prompt on where you at and listening to ideas just unlocks challenges for me.
-3. Assisting in connecting the primitives/dots I already had figured out, and chaining them into something that could lead to a successful exploit. Sometimes you need someone to point at the obvious direction for you.
+1. Making writing code *extremely* fast. That really compounded over time and made up for the fact I played alone. This was especially helpful since many, *many* challenges become so much easier if you run a local version of them, so setting up the requirements, adding some logging prints, and running the server became infinitely easier when I could just tell Cursor to do that on YOLO mode while I went to do another challenge meanwhile. It also greatly helped with languages I'm less familiar with.
+2. Helping me come up with new ideas on how to tackle a problem when I got stuck. This was by far the most impactful on the harder challenges. Something about writing a good prompt on where you're at and listening to ideas just unlocks challenges for me.
+3. Assisting in connecting the primitives/dots I already had figured out, and chaining them into something that could lead to a successful exploit. Sometimes you need someone to point out the obvious direction for you.
 
-Of the challenges I didn't complete (just 3), I have very good direction for Magic Dashboard (a PHP deserilization that you need to use to somehow override a local variable, but my PHP knowledge isn't there yet) and Public Enemy (basically algorithm confusion in JWT creation - you can sign a JWT using an EC private key but verify JWT while treating the EC public key as an RSA public key, which should lead to a very very small modulus you can probably crack yourself. However there was no way to extract the public key and I suspect there was another primitive I didn't notice).
+Of the challenges I didn't complete (just 3), I have very good direction for Magic Dashboard (a PHP deserialization that you need to use to somehow override a local variable, but my PHP knowledge isn't there yet) and Public Enemy (basically algorithm confusion in JWT creation).
 
 As for the 3rd challenge - Safe-SeqNumber-Guard. I absolutely have no idea. I literally didn't manage to do a single thing against the AI here. No clue how this challenge is easy and what I had missed.
 
-Anyway, let's go for the challenges write-up!
+Anyway, let's go for the challenges writeup!
 
 ## AI - Sandcastle (hard, pwn)
 
-In this challenge you are given a link `https://sandcastle.appsecil.ctf.today/mcp`, which immediately leads you to think about MCP - the new cool standard on the block.
+Here you get a link `https://sandcastle.appsecil.ctf.today/mcp`, which very much leads you to think about MCP - the new cool standard on the block.
 
-Luckily for me, I played a lot with MCP the past few months, so I rushed to [MCP Inspector](https://github.com/modelcontextprotocol/inspector) which just by running `npx @modelcontextprotocol/inspector` you can start up a local instance and connect it to whatever MCP server you want.
+Luckily, I played a lot with MCP the past few months, so I rushed to [MCP Inspector](https://github.com/modelcontextprotocol/inspector) which just by running `npx @modelcontextprotocol/inspector` you can start up a local instance and connect it to whatever MCP server you want.
 
 Connecting (with Streamable HTTP) to the server, it exposes a `listFiles` resource, which gives us the files in the MCP server directory
 
@@ -49,23 +49,23 @@ Connecting (with Streamable HTTP) to the server, it exposes a `listFiles` resour
 }
 ```
 
-And two tools - `getFile` that...gets a file, and `execute` that runs Javascript code in the sandbox.
+And two tools - `getFile` that...gets a file, and `execute` that runs JavaScript code in the sandbox.
 
-Running `getFile` on all the above and we have the source code of the MCP server. It's pretty long to implement all the details, but the interesting bit is the implementation of `execute`. Our clear goal is to escape the sandbox, run code ont the host of the MCP server and extract the flag (which normally sits at `/flag`).
+Running `getFile` on all the above and we have the source code of the MCP server. It's pretty long to implement all the details, but the interesting bit is the implementation of `execute`. Our clear goal is to escape the sandbox, run code on the host of the MCP server and extract the flag (which normally sits at `/flag`).
 
-The `execute` code is composed of a few steps. First, it verifies the given code doesn't contain a bunch of forbidden words (it uses regex to search for a whole word on each of them). Then, it creates a new Javascript VM based on `isolated-vm` npm package, runs a quick code that freezes a lot of built-in objects, wraps your code around `use strict` and runs it. If it finished successfully, it spawns a worked that runs it and returns the output.
+The `execute` code is composed of a few steps. First, it verifies the given code doesn't contain a bunch of forbidden words (it uses regex to search for a whole word on each of them). Then, it creates a new JavaScript VM based on the `isolated-vm` npm package, runs a quick code that freezes a lot of built-in objects, wraps your code around `use strict` and runs it. If it finishes successfully, it spawns a worker that runs it and returns the output.
 
-So we have a JS sandbox escape here. Not too versed with this (only escaped Python sandboxes in the past), but how different it can be?
+So we have a JS sandbox escape here. Not too versed with this (only escaped Python sandboxes in the past), but how different can it be?
 
-Well, it wasn't too different, except it was really difficult to debug what works and what isn't, because if you try to return or print an object it fails since it complains about not being able to copy them, or them returning as undefined. 
+Well, it wasn't too different, except it was really difficult to debug what works and what doesn't, because if you try to return or print an object it fails since it complains about not being able to copy them, or them returning as undefined. 
 
 But as long as you don't try to get the objects back to you and just one-shot the entire script, it simply works.
 
-The initial success was to find how to find `this` obejct and that it has the `process` child-object which contains basically all the imports that the process server has, including `fs` which simply lets you read files.
+The initial success was to find how to find the `this` object and that it has the `process` child-object which contains basically all the imports that the process server has, including `fs` which simply lets you read files.
 
 The way I managed to debug the way to this is by running the server locally and adding logging everywhere to understand what's the current object I managed to get to. 
 
-At the end, this is the script that just works (and bypasses all checks):
+In the end, this is the script that just works (and bypasses all checks):
 
 ```js
 (() => {
@@ -98,7 +98,7 @@ Flag: `AppSec-IL{D3bu991n9_15_7h3_w@y}`
 
 ## API - NextGen (easy, web)
 
-We just have a website that lets you create new users and signs into them. It generates a JWT for them of the following format:
+We just have a website that lets you create new users and sign into them. It generates a JWT for them of the following format:
 
 ```json
 {
@@ -113,11 +113,11 @@ We just have a website that lets you create new users and signs into them. It ge
 }
 ```
 
-Looks like the front-end was built with React and Webpack, so we can go through the Javascript files it generates and see some interesting things.
+Looks like the front-end was built with React and Webpack, so we can go through the JavaScript files it generates and see some interesting things.
 
-Immediately looking in `admin`, you can see a `api/promote` endpoint that takes the admin's OTP token and the user GUID and promotes it to admin.
+Immediately looking in `admin`, you can see an `api/promote` endpoint that takes the admin's OTP token and the user GUID and promotes it to admin.
 
-There's probably an issue here where you can guess or create the admin's OTP, or bypass the check on the OTP, but that wasn't needed as if you look at the `portal` webpack that is supposed to display the flag if you're an admin, it is simply there in the Javascript...
+There's probably an issue here where you can guess or create the admin's OTP, or bypass the check on the OTP, but that wasn't needed as if you look at the `portal` webpack that is supposed to display the flag if you're an admin, it is simply there in the JavaScript...
 
 Flag: `AppSec-IL{n3xt_g3n_m1ddl3w4r3_byp455_m45t3r}`
 
@@ -127,13 +127,13 @@ Flag: `AppSec-IL{n3xt_g3n_m1ddl3w4r3_byp455_m45t3r}`
 
 A website presenting a chess game you can play against yourself. We also get to see the source code.
 
-It's a simple Flask server uses `fen` notation with the `chess` library for Python to calculate allowed moves. Tried a bit to mess with this calculation to reach incorrect boards but that didn't work.
+It's a simple Flask server that uses `fen` notation with the `chess` library for Python to calculate allowed moves. I tried a bit to mess with this calculation to reach incorrect boards but that didn't work.
 
 Then you can see that instead of using normal templates the code uses string concatenation to create a valid Jinja template. It inserts whatever's in the `msg` key's value within the `session` object.
 
-This is set within the code that parses your mode, however funnily enough if you move is invalid, your string gets reflected directly in the `msg` key's value to be a part of the error.
+This is set within the code that parses your move, however funnily enough if your move is invalid, your string gets reflected directly in the `msg` key's value to be a part of the error.
 
-The flag is hidden in `config.SECRET_KEY` and you can make Jinja fill it out by using the special `{{<code>}}` notation it support. 
+The flag is hidden in `config.SECRET_KEY` and you can make Jinja fill it out by using the special `{{<code>}}` notation it supports. 
 
 So simply make a POST request to `/move` with some invalid move containing the code `{"move":"{{config.SECRET_KEY}}"}` and you'll see it reflected back to you.
 
@@ -143,21 +143,21 @@ Flag: `AppSec-IL{Ch3SSTI_1s_a_wInnIg_m0v3}`
 
 ## Web - X-Men (easy)
 
-This challenge is a simple website that lets you search in a database. We don't get to see teh source code but the search button says: "Search XML Database".
+This challenge is a simple website that lets you search in a database. We don't get to see the source code but the search button says: "Search XML Database".
 
-So naturally you think about XXE injection. However trying to XXE payloads just doesn't really work. However falling back to simple SQLi (`' or 1=1 or '`) just works and returns a hidden data in the database containing the flag.
+So naturally you think about XXE injection. However trying XXE payloads just doesn't really work. However falling back to simple SQLi (`' or 1=1 or '`) just works and returns hidden data in the database containing the flag.
 
 Flag: `AppSec-IL{!XPaTh_Inj3ct10n@_F0rC3}`
 
 ---
 
-## Cloud - Cant stop me now (easy)
+## Cloud - Can't stop me now (easy)
 
 Here we simply get a URL of an AWS SQS (simple queue service) queue.
 
-Using AWS cli, you can try to call the `recieve-message` API. However the CLI creates a token for you/wants you to have a profile, and for some reason this just fails claiming your unauthenticated, unsure.
+Using AWS CLI, you can try to call the `receive-message` API. However the CLI creates a token for you/wants you to have a profile, and for some reason this just fails claiming you're unauthenticated, unsure.
 
-However calling the `ReceiveMessage` API directly, unauthenticated simply works, and you read the next mesage in the queue which is the flag.
+However calling the `ReceiveMessage` API directly, unauthenticated simply works, and you read the next message in the queue which is the flag.
 
 `curl -X POST "https://sqs.il-central-1.amazonaws.com/447694922079/production-queue?Action=ReceiveMessage&Version=2012-11-05"`
 
@@ -167,7 +167,7 @@ Flag: `AppSec-IL{mama_look_at_me_i_can_read}`
 
 ## IOT - The ART of IOT (easy, forensics)
 
-Here you get a file with a weird extension: `.atkdl`. Running `file` on it says it's a zip. Unzipping and we get 16  directories with increasing numbers and a few files.
+Here you get a file with a weird extension: `.atkdl`. Running `file` on it says it's a zip. Unzipping and we get 16 directories with increasing numbers and a few files.
 
 The `set.ini` file sheds some light:
 
@@ -184,11 +184,11 @@ Okay this is definitely something that could be a snapshot of a serial port comm
 
 There isn't any data in the 16 directories (a normal assumption is that those are 16 channels), except for directory 1 which contains two 1mb files filled mostly with 0s or 1s.
 
-Not trying to bang your head parsing it too much, the problem with this channels is that this is a probably some logic analyzer sniffing a serial connection. You can assume a lot of things about the connection and try to parse it, but there are just so many different serial standards, as well as logic analyzer probably each saving the analysis under a different convertion, your best bet is to simply find the software that knows how to parse it.
+Not trying to bang your head parsing it too much, the problem with these channels is that this is probably some logic analyzer sniffing a serial connection. You can assume a lot of things about the connection and try to parse it, but there are just so many different serial standards, as well as logic analyzers each probably saving the analysis under a different convention, your best bet is to simply find the software that knows how to parse it.
 
-Luckily, Googling `DL16 Plus` you quickly find that this tool belongs to Alientek and that they provide the tool (ATK-LogicViewer) for free which knows to load `.atkdl` files. 
+Luckily, Googling `DL16 Plus` you quickly find that this tool belongs to Alientek and that they provide the tool (ATK-LogicViewer) for free which knows how to load `.atkdl` files. 
 
-Once you have it loaded, you can see the actual content in the middle. Judging by the name of the challegne, this is UART an the tool supports parsing it as UART natively and display the characters as ASCII, so this simply shows you the flag.
+Once you have it loaded, you can see the actual content in the middle. Judging by the name of the challenge, this is UART and the tool supports parsing it as UART natively and displaying the characters as ASCII, so this simply shows you the flag.
 
 <figure>
   <img style="display:block; margin-left: auto; margin-right: auto" src="/assets/images/Appsecil2025-Writeup/Appsecil2025-Writeup-atklogic.png" title="">
@@ -205,7 +205,7 @@ We have a link to a website and get its source code.
 
 We can see from the source code the users are managed through a directory and authenticated/searched via LDAP. We just need to successfully log in to get the flag.
 
-The search funcationlity that authenticate users is pretty simple:
+The search functionality that authenticates users is pretty simple:
 
 ```py
 search_filter = f"(&(cn={username})(userPassword={password}))"
@@ -223,7 +223,7 @@ search_filter = f"(&(cn={username})(userPassword={password}))"
 
 So we have a very simple LDAP search injection. We only need an existing username (which we have from the dockerfile - `DaGoat`) and we can try a wildcard password: `*`. But this gets blocked by the server.
 
-So isntead we can simply send this password `*)(cn=*` which works because the `cn` will also match `DaGoat` and the check for the wildcard is exact and not contains.
+So instead we can simply send this password `*)(cn=*` which works because the `cn` will also match `DaGoat` and the check for the wildcard is exact and not contains.
 
 Flag: `AppSec-IL{inj3cti0n_s1mP1y_w0Rk5}`
 
@@ -235,9 +235,9 @@ This is a level-up version of `OUtbreak` above. We have a link to a different we
 
 This time the username is again `DaGoat` and there's actually no check on the password.
 
-However, now the flag is not simply reflected afer login, but instead is hidden in the `description` attribute of the user in the directory under base32.
+However, now the flag is not simply reflected after login, but instead is hidden in the `description` attribute of the user in the directory under base32.
 
-So what you can do is use whether you login successfully or not as an indicator and add the description attribute in the LDAP search query. Using a wildcard, you can iterate over a prefix of the flag and know if its correct if you managed to log in. This way you can reveal the description letter-by-letter.
+So what you can do is use whether you login successfully or not as an indicator and add the description attribute in the LDAP search query. Using a wildcard, you can iterate over a prefix of the flag and know if it's correct if you managed to log in. This way you can reveal the description letter-by-letter.
 
 Here's a short script that reveals the next letter:
 ```py
@@ -286,21 +286,21 @@ Flag: `AppSec-IL{5cr2pt1iNg_t0_exflitr4te_1S_3vil}`
 
 ## Web - Catch me (medium)
 
-Here we have a link to a website and have its source code. We can see the server is served with nginx, and has few simple route.
+Here we have a link to a website and have its source code. We can see the server is served with nginx, and has a few simple routes.
 
 The first one is login which is the default if you're not authenticated. We can see there are two users: `guest` and `admin`. We have the guest's password but not the admin's.
 
-After logging as guest you get your own subdomain. In the dashboard you can generate new tokens and access generated tokens by their id (which is incremental). There's also a report button which sends a POST request to `https://{your_sub_domain}.catch-me.appsecil.ctf.today/api/report` with a URL in the data.
+After logging in as guest you get your own subdomain. In the dashboard you can generate new tokens and access generated tokens by their id (which is incremental). There's also a report button which sends a POST request to `https://{your_sub_domain}.catch-me.appsecil.ctf.today/api/report` with a URL in the data.
 
-Looking at the implementation of the report functionality, the given URL is parsed, a session is created with persistent cookie jar, it is used to login as admin and then makes a request to the given URL. 
+Looking at the implementation of the report functionality, the given URL is parsed, a session is created with a persistent cookie jar, it is used to login as admin and then makes a request to the given URL. 
 
 So essentially, you can make admin-authenticated requests by POSTing to `https://{your_sub_domain}.catch-me.appsecil.ctf.today/api/report` with any URL you want, but that falls under your subdomain.
 
-Tried a few techniques to try and force the admin to make a request to somewhere outside of this server, or to leak its cookies somehow. 
+I tried a few techniques to try and force the admin to make a request to somewhere outside of this server, or to leak its cookies somehow. 
 
-But then noticed that the handler `getTokenById` which retrieves a generated token, if the request is made using an admin, it simply returns the flag.
+But then I noticed that the handler `getTokenById` which retrieves a generated token, if the request is made using an admin, it simply returns the flag.
 
-Looking back at the nginx configuration, we can see it is configured to save cache, so this a classic cache poisoning - we make the admin request some token, the response is then cached and can get it. That's why you get personalized sub domain.
+Looking back at the nginx configuration, we can see it is configured to save cache, so this is a classic cache poisoning - we make the admin request some token, the response is then cached and we can get it. That's why you get a personalized subdomain.
 
 ```
     location ~* \.(css|js|html)$ {
@@ -315,7 +315,7 @@ Looking back at the nginx configuration, we can see it is configured to save cac
     }
 ```
 
-So the nginx is configured to save cache for css/js/html files. Luckily, the router doesn't care and routes anything after `/api/token/` to the `getTokenById` handler (since it is configured to be `'/api/token/:tokenId',`)
+So the nginx is configured to save cache for css/js/html files. Luckily, the router doesn't care and routes anything after `/api/token/` to the `getTokenById` handler (since it is configured to be `'/api/token/:tokenId'`)
 
 So, if we can simply make a POST directing the admin to request `https://<subdomain>.catch-me.appsecil.ctf.today/api/token/0.html` the server will cache the response. So now if we access this from any authenticated instance (like with our guest) we can grab the flag.
 
@@ -329,7 +329,7 @@ Here we get a link to a website that seems to allow us to upload Frida scripts a
 
 Probably we'll have to construct a Frida script that helps us extract the flag.
 
-The APK doesn't contain much. Under `appsecil.wakeup` there a single `MainActivity`. It is obviously obfuscated and there's a part that looks very interesting:
+The APK doesn't contain much. Under `appsecil.wakeup` there's a single `MainActivity`. It is obviously obfuscated and there's a part that looks very interesting:
 
 ```java
 if (c0266b.f703a.f700a.getString("WakeUp", null) == null) {
@@ -369,19 +369,19 @@ if (c0266b.f703a.f700a.getString("WakeUp", null) == null) {
 }
 ```
 
-So the flag is being loaded into memory, then saved as the value into whatever `c0266b.f703a` is with the key `Wakeup`.
+So the flag is being loaded into memory, then saved as the value into whatever `c0266b.f703a` is with the key `WakeUp`.
 
-Without trying to dig too much into it, this way saving key value pair into things at the beginning of the activity code looks like writing into the app's `SharedPreferences`.
+Without trying to dig too much into it, this way of saving key value pairs at the beginning of the activity code looks like writing into the app's `SharedPreferences`.
 
-Running this app into a local emulator, wrote some simple Frida scripts that hooks on several `SharedPreferences` objects, but no hits there.
+Running this app in a local emulator, I wrote some simple Frida scripts that hook on several `SharedPreferences` objects, but no hits there.
 
 After some debugging (which just means dumping all shared preferences) we can see there's one pair that is encrypted, and realize that the flag is probably saved into `EncryptedSharedPreferences` instead.
 
-So we write a Frida script that hooks `androidx.security.crypto.EncryptedSharedPreferences` the simply reads the `WakeUp` key:
+So we write a Frida script that hooks `androidx.security.crypto.EncryptedSharedPreferences` that simply reads the `WakeUp` key:
 
 ```javascript
 Java.perform(function() {
-    console.log("[+] Focing read from EncryptedSharedPreferences...");
+    console.log("[+] Forcing read from EncryptedSharedPreferences...");
     
     try {
         Java.choose("androidx.security.crypto.EncryptedSharedPreferences", {
@@ -411,7 +411,7 @@ Flag: `AppSec-IL{r3d_vs_blU3_cho1c3_1s_y0urs}`
 
 ## Web - Big-In-Japan (easy)
 
-A simple website, we do not get the source code here. It has a single form which you can put a URL and then it says that it "clicked" the URL.
+A simple website, we do not get the source code here. It has a single form which you can put a URL into and then it says that it "clicked" the URL.
 
 One thing that is immediate from this short script in the middle of the HTML:
 
@@ -426,7 +426,7 @@ if (urlFromFrontend && filteredURLFromBackend) {
 
 ```
 
-That the same endpoint expects a `url` parameter. If it is it,then it is being reflected into this script that simply redirects the user to the given url after server-side filtering:
+The same endpoint expects a `url` parameter. If it exists, then it is being reflected into this script that simply redirects the user to the given url after server-side filtering:
 
 ```
             const filteredURLFromBackend = "<filtered_url>";
@@ -438,15 +438,15 @@ That the same endpoint expects a `url` parameter. If it is it,then it is being r
             }
 ```
 
-After some quick testing, the server side seem to filter all quotes (`"`, `'`, and `\``) so we can't escape the string to simply run arbitrary Javascript.
+After some quick testing, the server side seems to filter all quotes (`"`, `'`, and `` ` ``) so we can't escape the string to simply run arbitrary JavaScript.
 
 However we can input any URL we want and "someone" will "click" on it.
 
-So we need to find a way to run Javascript without breaking out of the string. 
+So we need to find a way to run JavaScript without breaking out of the string. 
 
 We can use the `javascript:` scheme for this, but the server seems to also block it explicitly.
 
-However URL schemes ignore backslash which isn't encoded by the website, so we can pass `java\script` to it and it will run arbitrary Javascript.
+However URL schemes ignore backslash which isn't encoded by the website, so we can pass `java\script` to it and it will run arbitrary JavaScript.
 
 Now the problem is only how to write a script that redirects the admin to our server without using quotes. This is easy! Use `fromCharCode` :) - just encode your server url so that the other user will be redirected to it. What is our flag though? Probably document.cookie as this is the target for every such XSS.
 
@@ -475,19 +475,19 @@ Opening the app in jadx, we can see it has 3 activities:
 Iterates over all images in the `files/img` directory. For each file, calls the native function `isValid` from the shared library, and if it passes, decodes the file as a bitmap and displays it in an ImageView container.
 
 `ZipImageActivity` (not exported) -
-Extracts a string extra from the received intent named `url`. On success, takes the URL and downloads a file from it, treats it as a zip file and extract its contents into the `files/img/` directory.
+Extracts a string extra from the received intent named `url`. On success, takes the URL and downloads a file from it, treats it as a zip file and extracts its contents into the `files/img/` directory.
 
-We can immediately two issues here:
+We can immediately see two issues here:
 1. Even though the `ZipImageActivity` is not exported, by having the main exported activity call `Intent.parseUri` on a URL that we supply makes it so we can simply send an intent URL and start the `ZipImageActivity` and force it to download a zip from a location we control.
-2. The code at `Unzip` class doesn't verify there's no directory traversal in the zip file. This issue is blocked at recent SDK versions (>33), but we can assume the remote phone is an older version.
+2. The code at the `Unzip` class doesn't verify there's no directory traversal in the zip file. This issue is blocked at recent SDK versions (>33), but we can assume the remote phone is an older version.
 
-The fact that the main activity resets the image and the shared objects every time it is created strongly hints that we need to use the directory traversal to override files, namely the shared objects, to leak the real `flag.png`
+The fact that the main activity resets the images and the shared objects every time it is created strongly hints that we need to use the directory traversal to override files, namely the shared objects, to leak the real `flag.png`
 
-The attack turns out to be pretty blind and convoluted to do without a local setup, I ran a local Genymotion emulator (since my test Android has too high SDK version) to test this on. Turns out I almost got it blind on first attempt (within the CTF time!), but the c++ code had a small bug in it :(
+The attack turns out to be pretty blind and convoluted to do without a local setup, I ran a local Genymotion emulator (since my test Android has too high an SDK version) to test this on. Turns out I almost got it blind on first attempt (within the CTF time!), but the C++ code had a small bug in it :(
 
 Anyway, what we need is:
 
-1. Use NDK to compile 4 versions (PIC for all possible ABIs - example for x86: `$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/i686-linux-android21-clang++ -shared -fPIC -O2 -std=c++17 imgcheck.cpp  -o libimgcheck_x86.so`) of a simple c++ file that exports a single `isValid` function:
+1. Use NDK to compile 4 versions (PIC for all possible ABIs - example for x86: `$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/i686-linux-android21-clang++ -shared -fPIC -O2 -std=c++17 imgcheck.cpp  -o libimgcheck_x86.so`) of a simple C++ file that exports a single `isValid` function:
 
 ```cpp
 JNIEXPORT jboolean JNICALL
