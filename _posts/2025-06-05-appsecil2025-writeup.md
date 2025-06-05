@@ -159,7 +159,7 @@ Flag: `AppSec-IL{!XPaTh_Inj3ct10n@_F0rC3}`
 
 Here we simply get a URL of an AWS SQS (simple queue service) queue.
 
-Using AWS CLI, you can try to call the `receive-message` API. However the CLI creates a token for you/wants you to have a profile, and for some reason this just fails claiming you're unauthenticated, unsure.
+Using AWS CLI, you can try to call the `receive-message` API. However the CLI creates a token for you/wants you to have a profile, and for some reason this just fails claiming you're unauthenticated, unsure what's happening there as it should work.
 
 However calling the `ReceiveMessage` API directly, unauthenticated simply works, and you read the next message in the queue which is the flag.
 
