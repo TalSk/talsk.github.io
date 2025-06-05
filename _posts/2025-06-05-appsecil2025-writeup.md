@@ -133,9 +133,13 @@ Then you can see that instead of using normal templates the code uses string con
 
 This is set within the code that parses your move, however funnily enough if your move is invalid, your string gets reflected directly in the `msg` key's value to be a part of the error.
 
-The flag is hidden in `config.SECRET_KEY` and you can make Jinja fill it out by using the special `{{code}}` notation it supports. 
+{% raw %}
+The flag is hidden in `config.SECRET_KEY` and you can make Jinja fill it out by using the special `{{<code>}}` notation it supports.
+{% endraw %} 
 
+{% raw %}
 So simply make a POST request to `/move` with some invalid move containing the code `{"move":"{{config.SECRET_KEY}}"}` and you'll see it reflected back to you.
+{% endraw %} 
 
 Flag: `AppSec-IL{Ch3SSTI_1s_a_wInnIg_m0v3}`
 
