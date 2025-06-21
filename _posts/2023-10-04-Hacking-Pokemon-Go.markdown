@@ -1,6 +1,6 @@
 ---
 layout: post_with_toc
-title:  "Breaking Pokémon Go Anti-Cheating System (1)"
+title:  "Breaking Pokémon Go Anti-Cheating System - Part 1"
 subtitle: "Filling the Pokédex was never that easy"
 date:   2024-04-06 11:05:34 +0300
 tags: [RE, gaming, android, Pokémon-go]
@@ -169,10 +169,10 @@ $ protoc --decode_raw < request_1.bin
 4 {
   1: 106
   2 {
-    1: "\200\200\200\200\314\250\256\201\025"
+    1: "\200\200\200\200\200\250\256\201\025"
     2: "\000"
-    3: 0x403fcf4ce0000000
-    4: 0x4041646b60000000
+    3: 0x403f323200000000
+    4: 0xc0546a8520000000
   }
 }
 4 {
@@ -190,22 +190,22 @@ $ protoc --decode_raw < request_1.bin
 4 {
   1: 5
   2 {
-    1: "4a2e9bc330dae60e7b74fc85b98868ab4700802e"
+    1: "4a2e9bc454dae60e7b74fc93b98868ab4700802e"
   }
 }
 6 {
   1: 6
   2 {
-    1: "\363\230\314\364.\302\303\312p\373\271\217\231\233\363qi8\352X\017i\343yP\245,\010PI\364\n\217Z\342L\200\330\317\211iT3\247\'\020I\272\t9\347i\034)\234\305\027\204\303\206\246B\263\333\265\017\340-]2\317\376b\250:\233\201=d\014\272\035\220\365]\265\277k\363\\K\023\307Z\327qHB{\013\251\223\300F\324\314:\332\255\030\327|\3032 Q\301\250\016\225\221\022\213\277q\035\306\341\371\353N\304\325\3449\234\007S\310~\031\205\223\225S2\243\311l\272\014\313\014\347P\344\0373\257\331\205\026\037p\236\202<\241)X\305M\215Rb\222B\320\020\354\261\227\353\2209\013\353\260\221\320\026g\2749\303\327e9`K\202J/\262\355T\316\335\355\t\021#\026\306e\356d\231\263qhzv\326\237\201\305\205,\0168\227\201#\241P\030\207\341@\026s\303\311\222p_\013S\240:\233\037\300\226\1776\320\237c:c\006qe\216X\3139\217\221|\354\366c^gju\214k\202\357\367\037$K\233"
+    1: "\363\230\314\364.\200\303\312p\373\271\217\231\233\363qi8\352X\017i\343yP\245,\010PI\364\n\217Z\342L\200\330\317\211iT3\247\'\020I\272\t9\347i\034)\234\305\027\204\303\206\246B\263\333\265\017\340-]2\317\376b\250:\233\201=d\014\272\035\220\365]\265\277k\363\\K\023\307Z\327qHB{\013\251\223\300F\324\314:\332\255\030\327|\3032 Q\301\250\016\225\221\022\213\277q\035\306\341\371\353N\304\325\3449\234\007S\310~\031\205\223\225S2\243\311l\272\014\313\014\347P\344\0373\257\331\205\026\037p\236\202<\241)X\305M\215Rb\222B\320\020\354\261\227\353\2209\013\353\260\221\320\026g\2749\303\327e9`K\202J/\262\355T\316\335\355\t\021#\026\306e\356d\231\263qhzv\326\237\201\305\205,\0168\227\201#\241P\030\207\341@\026s\303\311\222p_\013S\240:\233\037\300\226\1776\320\237c:c\006qe\216X\3139\217\221|\354\366c^gju\214k\202\357\367\037$K\233"
   }
 }
-7: 0x403fcf4ce0000000
-8: 0x4041646b60000000
+7: 0x403f323200000000
+8: 0xc0546a8520000000
 9: 0x403b083120000000
 11 {
-  1: "\'\334W\245C\247\200\033\271r\373\030\371z\357\300\226\357\266\230/r\030\275F\265\232\245L_\000\206PK_\212C\250\331\"\304\244\2053\270\315\270F\207Kk\340\345\224y\332\213\245\364\'\262\241*\261"
+  1: "\'\334W\245C\247\033\200\271r\373\030\371z\357\300\226\357\266\230/r\030\275F\265\232\245L_\000\206PK_\212C\250\331\"\304\244\2053\270\315\270F\207Kk\340\345\224y\332\213\245\364\'\262\241*\261"
   2: 1467996809291
-  3: "\365\255\3318w\303\007Hmb\034@*\2122\272"
+  3: "\365\255\3318w\333\007Hmb\034@*\2122\272"
 }
 12: 4590
 ```
@@ -222,14 +222,14 @@ Assuming that all requests from the Pokémon Go app follow the same message form
 ```protobuf
 $ protoc --decode_raw < request_2.bin
 1: 2
-3: 1332598923109335417
+3: 1432598923109335417
 4 {
   1: 106
   2 {
-    1: "\200\200\200\200\314\253\256\201\025\200\200\200\200\264\250\256\201\025\200\200\200\200\274\250\256\201\025\200\200\200\200\234\255\256\201\025\200\200\200\200\314\250\256\201\025\200\200\200\200\224\255\256\201\025\200\200\200\200\214\255\256\201\025\200\200\200\200\324\253\256\201\025\200\200\200\200\344\254\256\201\025\200\200\200\200\254\250\256\201\025\200\200\200\200\354\254\256\201\025\200\200\200\200\204\255\256\201\025\200\200\200\200\374\254\256\201\025\200\200\200\200\364\254\256\201\025\200\200\200\200\244\250\256\201\025\200\200\200\200\334\253\256\201\025\200\200\200\200\354\253\256\201\025\200\200\200\200\264\253\256\201\025\200\200\200\200\344\253\256\201\025\200\200\200\200\304\253\256\201\025\200\200\200\200\274\253\256\201\025"
+    1: "\200\200\200\200\314\253\256\201\025\200\200\200\200\264\250\256\201\025\200\200\200\200\274\250\256\201\025\200\200\200\200\234\255\256\201\025\200\200\200\200\200\200\256\201\025\200\200\200\200\224\255\256\201\025\200\200\200\200\214\255\256\201\025\200\200\200\200\324\253\256\201\025\200\200\200\200\344\254\256\201\025\200\200\200\200\254\250\256\201\025\200\200\200\200\354\254\256\201\025\200\200\200\200\204\255\256\201\025\200\200\200\200\374\254\256\201\025\200\200\200\200\364\254\256\201\025\200\200\200\200\244\250\256\201\025\200\200\200\200\334\253\256\201\025\200\200\200\200\354\253\256\201\025\200\200\200\200\264\253\256\201\025\200\200\200\200\344\253\256\201\025\200\200\200\200\304\253\256\201\025\200\200\200\200\274\253\256\201\025"
     2: "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
-    3: 0x403fcf4ce0000000
-    4: 0x4041646b60000000
+    3: 0x403473e0ac000000
+    4: 0x4058f962d3000000
   }
 }
 4 {
@@ -247,7 +247,7 @@ $ protoc --decode_raw < request_2.bin
 4 {
   1: 5
   2 {
-    1: "4a2e9bc330dae60e7b74fc85b98868ab4700802e"
+    1: "4a2e9bc454dae60e7b74fc93b98868ab4700802e"
   }
 }
 6 {
@@ -256,13 +256,13 @@ $ protoc --decode_raw < request_2.bin
     1: "\363\230\314\364..."
   }
 }
-7: 0x403fcf4ce0000000
-8: 0x4041646b60000000
+7: 0x403473e0ac000000
+8: 0x4058f962d3000000
 9: 0x403b083120000000
 11 {
-  1: "\'\334W\245C\247\200\033\271r\373\030\371z\357\300\226\357\266\230/r\030\275F\265\232\245L_\000\206PK_\212C\250\331\"\304\244\2053\270\315\270F\207Kk\340\345\224y\332\213\245\364\'\262\241*\261"
+  1: "\'\334W\245C\247\033\200\271r\373\030\371z\357\300\226\357\266\230/r\030\275F\265\232\245L_\000\206PK_\212C\250\331\"\304\244\2053\270\315\270F\207Kk\340\345\224y\332\213\245\364\'\262\241*\261"
   2: 1467996809291
-  3: "\365\255\3318w\303\007Hmb\034@*\2122\272"
+  3: "\365\255\3318w\333\007Hmb\034@*\2122\272"
 }
 12: 4495
 ```
@@ -272,14 +272,14 @@ $ protoc --decode_raw < request_2.bin
 ```protobuf
 $ protoc --decode_raw < request_3.bin
 1: 2
-3: 1764153216922026363
+3: 1864153216922026363
 4 {
   1: 102
   2 {
     1: 0xa56e05c07131fa3d
-    2: "1502b95d46b"
-    3: 0x403fcf4cc0000000
-    4: 0x4041646b40000000
+    2: "1502bffd46b"
+    3: 0x40459834dd000000
+    4: 0xc053f993bf000000
   }
 }
 4 {
@@ -297,7 +297,7 @@ $ protoc --decode_raw < request_3.bin
 4 {
   1: 5
   2 {
-    1: "4a2e9bc330dae60e7b74fc85b98868ab4700802e"
+    1: "4a2e9bc454dae60e7b74fc93b98868ab4700802e"
   }
 }
 6 {
@@ -306,13 +306,13 @@ $ protoc --decode_raw < request_3.bin
     1: "\222\024\316\0054\206mb^\210..."
   }
 }
-7: 0x403fcf4cc0000000
-8: 0x4041646b40000000
+7: 0x40459834dd000000
+8: 0xc053f993bf000000
 9: 0x40304147a0000000
 11 {
-  1: "\'\334W\245C\247\200\033\271r\373\030\371z\357\300\226\357\266\230/r\030\275F\265\232\245L_\000\206PK_\212C\250\331\"\304\244\2053\270\315\270F\207Kk\340\345\224y\332\213\245\364\'\262\241*\261"
+  1: "\'\334W\245C\247\033\200\271r\373\030\371z\357\300\226\357\266\230/r\030\275F\265\232\245L_\000\206PK_\212C\250\331\"\304\244\2053\270\315\270F\207Kk\340\345\224y\332\213\245\364\'\262\241*\261"
   2: 1467996809291
-  3: "\365\255\3318w\303\007Hmb\034@*\2122\272"
+  3: "\365\255\3318w\333\007Hmb\034@*\2122\272"
 }
 12: 2651
 ```
@@ -388,18 +388,18 @@ repeated_message {
 }
 repeated_message {
   request_type_maybe: 4
-  additional_data_maybe: "\010\306\241\312\332\334*"
+  additional_data_maybe: "\010\306\241\332\312\334*"
 }
 repeated_message {
   request_type_maybe: 129
 }
 repeated_message {
   request_type_maybe: 5
-  additional_data_maybe: "\n(4a2e9bc330dae60e7b74fc85b98868ab4700802e"
+  additional_data_maybe: "\n(4a2e9bc454dae60e7b74fc93b98868ab4700802e"
 }
 message_six: "\010\006\022\243\002\n\240\002..."
-constant_seven: 31.80976676940918
-constant_eight: 34.784526824951172
+constant_seven: 31.19607543945312
+constant_eight: -81.66437530517578
 constant_nine: 27.031999588012695
 auth_maybe: "\n@\'\334W\245C\247\200\033...."
 small_number: 4590
@@ -466,10 +466,10 @@ if __name__ == '__main__':
 $ python3 script.py request_3.bin
 Request type: 106
 Request data:
-1: "\200\200\200\200\314\250\256\201\025"
+1: "\200\200\200\200\314\200\256\201\025"
 2: "\000"
-3: 0x403fcf4ce0000000
-4: 0x4041646b60000000
+3: 0x40459834dd000000
+4: 0xc053f993bf000000
 --------------------
 Request type: 126
 Request data:
@@ -507,55 +507,36 @@ To further understand each request type, let's examine the raw response to this 
 }
 100 {
   1 {
-    1: 1513976129680048128
+    1: -8520171482234486784
     2: 1467995224486
     3 {
-      1: "2aa8d7162e694e109cf21ae4adeb611b.16"
+      1: "2aa8d7162e694e109cf21ae4adeb611c.16"
       2: 1467972940648
-      3: 0x403fcd9b90ea9e6f
-      4: 0x404164be40420f6f
+      3: 0x40459b2b6766bd15
+      4: 0xc053fae801ff9560
       5: 3
       6: 17
       8: 1
       10: 4102
     }
     3 {
-      1: "db7fbb3ce8c84f70bed1100a2db2aec4.16"
+      1: "db7fbb3ce8c84f70bed1100a2db2aec3.16"
       2: 1467338329663
-      3: 0x403fcdb163baba7c
-      4: 0x4041649b62c77575
+      3: 0x40459b2b67663b91
+      4: 0xc053fae85bffac5c
       8: 1
       9: 1
       14: 1467989836915
     }
     4 {
-      2: 0x403fcdb73321992f
-      3: 0x4041649cb72d1af8
+      2: 0x40459b2b67663bfc
+      3: 0xc053fae85bffac8f
     }
     4 {
-      2: 0x403fcdba8ed17ddc
-      3: 0x4041649f8b1b9328
+      2: 0x40459b2b6766bddc
+      3: 0xc053fae801ff9528
     }
-    4 {
-      2: 0x403fcdab0b1a5c51
-      3: 0x404164a806e5dd30
-    }
-    4 {
-      2: 0x403fcdb02941ad70
-      3: 0x404164a806e5dd30
-    }
-    4 {
-      2: 0x403fcdbfacf8d9c8
-      3: 0x4041649f8b1b9328
-    }
-    4 {
-      2: 0x403fcda9c45ac424
-      3: 0x4041649167715cbd
-    }
-    4 {
-      2: 0x403fcdcbfe3c908a
-      3: 0x4041648bbf925f1e
-    }
+    // ...
   }
   2: 1
 }
@@ -573,7 +554,7 @@ To further understand each request type, let's examine the raw response to this 
   1: 1
 }
 100 {
-  2: "4a2e9bc330dae60e7b74fc85b98868ab4700802e"
+  2: "4a2e9bc333dae60e7b74fc85b98868ab4700802e"
 }
 ```
 
@@ -633,62 +614,43 @@ if __name__ == '__main__':
 $ python3 script.py request_3.bin response_3.bin
 Request type: 106
 Request data:
-1: "\200\200\200\200\314\250\256\201\025"
+1: "\200\200\200\200\314\200\256\201\025"
 2: "\000"
-3: 0x403fcf4ce0000000
-4: 0x4041646b60000000
+3: 0x40459834dd000000
+4: 0xc053f993bf000000
 
 Response data:
 1 {
-  1: 1513976129680048128
+  1: -8520171482234486784
   2: 1467995224486
   3 {
-    1: "2aa8d7162e694e109cf21ae4adeb611b.16"
+    1: "2aa8d7162e694e109cf21ae4adeb611c.16"
     2: 1467972940648
-    3: 0x403fcd9b90ea9e6f
-    4: 0x404164be40420f6f
+    3: 0x40459b2b6766bd15
+    4: 0xc053fae801ff9560
     5: 3
     6: 17
     8: 1
     10: 4102
   }
   3 {
-    1: "db7fbb3ce8c84f70bed1100a2db2aec4.16"
+    1: "db7fbb3ce8c84f70bed1100a2db2aec3.16"
     2: 1467338329663
-    3: 0x403fcdb163baba7c
-    4: 0x4041649b62c77575
+    3: 0x40459b2b67663b91
+    4: 0xc053fae85bffac5c
     8: 1
     9: 1
     14: 1467989836915
   }
   4 {
-    2: 0x403fcdb73321992f
-    3: 0x4041649cb72d1af8
+    2: 0x40459b2b67663bfc
+    3: 0xc053fae85bffac8f
   }
   4 {
-    2: 0x403fcdba8ed17ddc
-    3: 0x4041649f8b1b9328
+    2: 0x40459b2b6766bddc
+    3: 0xc053fae801ff9528
   }
-  4 {
-    2: 0x403fcdab0b1a5c51
-    3: 0x404164a806e5dd30
-  }
-  4 {
-    2: 0x403fcdb02941ad70
-    3: 0x404164a806e5dd30
-  }
-  4 {
-    2: 0x403fcdbfacf8d9c8
-    3: 0x4041649f8b1b9328
-  }
-  4 {
-    2: 0x403fcda9c45ac424
-    3: 0x4041649167715cbd
-  }
-  4 {
-    2: 0x403fcdcbfe3c908a
-    3: 0x4041648bbf925f1e
-  }
+  // ...
 }
 2: 1
 
@@ -721,10 +683,10 @@ Response data:
 --------------------
 Request type: 5
 Request data:
-1: "4a2e9bc330dae60e7b74fc85b98868ab4700802e"
+1: "4a2e9bc340dae60e7b74fc85b98868ab4700802e"
 
 Response data:
-2: "4a2e9bc330dae60e7b74fc85b98868ab4700802e"
+2: "4a2e9bc340dae60e7b74fc85b98868ab4700802e"
 
 --------------------
 ```
@@ -834,62 +796,43 @@ if __name__ == '__main__':
 $ python3 script.py request_3.bin response_3.bin
 Request type: 106
 Request data:
-field_1: 1513976129680048128
+field_1: -8520171482234486784
 null_byte: "\000"
-latitude: 31.80976676940918
-longitude: 34.784526824951172
+latitude: 43.18911325931549
+longitude: -79.89964270591736
 
 Response data:
 data {
-  id_maybe: 1513976129680048128
+  id_maybe: -8520171482234486784
   timestamp_maybe: 1467995224486
   location_one {
-    location_identifier_maybe: "2aa8d7162e694e109cf21ae4adeb611b.16"
+    location_identifier_maybe: "2aa8d7162e694e109cf21ae4adeb611c.16"
     timestamp_maybe_2: 1467972940648
-    latitude: 31.803155
-    longitude: 34.787056
+    latitude: 43.21226208225759
+    longitude: -79.92041063269926
     some_num_5: 3
     some_num_6: 17
     some_bool_8: 1
     some_num_10: 4102
   }
   location_one {
-    location_identifier_maybe: "db7fbb3ce8c84f70bed1100a2db2aec4.16"
+    location_identifier_maybe: "db7fbb3ce8c84f70bed1100a2db2aec3.16"
     timestamp_maybe_2: 1467338329663
-    latitude: 31.803488
-    longitude: 34.785992
+    latitude: 43.21226208202200
+    longitude: -79.92043209045500
     some_bool_8: 1
     some_bool_9: 1
     timestamp_maybe_14: 1467989836915
   }
   location_two {
-    latitude: 31.803576656058052
-    longitude: 34.7860325784913
+    latitude: 43.21226208202276
+    longitude: -79.92043209045572
   }
   location_two {
-    latitude: 31.803627897401256
-    longitude: 34.786118877853653
+    latitude: 43.212262082259
+    longitude: -79.92041063269846
   }
-  location_two {
-    latitude: 31.803391164718338
-    longitude: 34.78637777541951
-  }
-  location_two {
-    latitude: 31.803469255957168
-    longitude: 34.78637777541951
-  }
-  location_two {
-    latitude: 31.803705988649909
-    longitude: 34.786118877853653
-  }
-  location_two {
-    latitude: 31.803371688995085
-    longitude: 34.785687380173364
-  }
-  location_two {
-    latitude: 31.803893937860757
-    longitude: 34.785514780493244
-  }
+  // ...
 }
 status_maybe: 1
 
@@ -899,7 +842,7 @@ status_maybe: 1
 Placing the two parsed `location_one` on a map, we can see that `LocationOneMessage` marks important locations around me (important for Pokémon Go players, at least): a gym and a PokéStop! 
 
 <figure>
-  <img style="display:block; margin-left: auto; margin-right: auto" src="/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-Significant-Locations.png" title="Turns out I'm not too old to play at the kids' park">
+  <img style="display:block; margin-left: auto; margin-right: auto" src="/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-Significant-Locations-2.png" title="Turns out I'm not too old to play at the kids' park">
   <figcaption style="text-align: center; font-size:14px; color: gray"><i>The response's given significant locations</i></figcaption>
 </figure>
 
@@ -1022,13 +965,13 @@ We find that the 5th response container includes objects from multiple map cells
 ```protobuf
 // ...
 map_cell {
-  s2_cell_id: 1513976282151387136
+  s2_cell_id: -8520171482234486784
   as_of_time_ms: 1467995224510
   fort {
-    fort_id: "ab4be9644fc94dfc896f7269be1a8963.16"
+    fort_id: "ab4bf9634fc94dfc896f7269be1a8963.16"
     last_modified_ms: 1467338329664
-    latitude: 31.810541
-    longitude: 34.787694
+    latitude: 35.72228384017944
+    longitude: 139.7710394859314
     enabled: true
     fort_type: CHECKPOINT
   }
@@ -1040,77 +983,77 @@ map_cell {
 }
 // ...
 map_cell {
-  s2_cell_id: 1513976234906746880
+  s2_cell_id: -8520171482234486784
   as_of_time_ms: 1467995224510
   fort {
-    fort_id: "9feec60670b74df9871391b4b9e3ca24.16"
+    fort_id: "9feef60670b74df9871391b4b9e3ca24.16"
     last_modified_ms: 1467338329663
-    latitude: 31.810439
-    longitude: 34.784115
+    latitude: 35.72228384017944
+    longitude: 139.7710394859314
     enabled: true
     fort_type: CHECKPOINT
   }
   spawn_point {
-    latitude: 31.810360853505919
-    longitude: 34.784306573004677
+    latitude: 35.72228384017531
+    longitude: 139.7710394859677
   }
   wild_pokemon {
-    encounter_id: 3736514205779371933
+    encounter_id: 3736514205889371933
     last_modified_ms: 1467995224510
-    latitude: 31.8102071440914
-    longitude: 34.784047669185256
-    spawn_point_id: "1502b95d5c7"
+    latitude: 35.72228384017914
+    longitude: 139.7710394859256
+    spawn_point_id: "167fb95d5c"
     pokemon {
       pokemon_id: 16
     }
     time_till_hidden_ms: 232574
   }
   wild_pokemon {
-    encounter_id: 11920471587787242045
+    encounter_id: 11920471590087242045
     last_modified_ms: 1467995224510
-    latitude: 31.809633672823804
-    longitude: 34.784133970545241
-    spawn_point_id: "1502b95d46b"
+    latitude: 35.72228384013804
+    longitude: 139.7710394524156
+    spawn_point_id: "1502bffd46b"
     pokemon {
       pokemon_id: 23
     }
     time_till_hidden_ms: 204878
   }
   catchable_pokemon {
-    spawnpoint_id: "1502b95d5c7"
-    encounter_id: 3736514205779371933
+    spawnpoint_id: "167fb95d5c"
+    encounter_id: 3736514205889371933
     pokedex_type_id: 16
     expiration_time_ms: 1467995457084
-    latitude: 31.8102071440914
-    longitude: 34.784047669185256
+    latitude: 35.72228384017914
+    longitude: 139.7710394859256
   }
   catchable_pokemon {
-    spawnpoint_id: "1502b95d46b"
-    encounter_id: 11920471587787242045
+    spawnpoint_id: "1502bffd46b"
+    encounter_id: 11920471590087242045
     pokedex_type_id: 23
     expiration_time_ms: 1467995429388
-    latitude: 31.809633672823804
-    longitude: 34.784133970545241
+    latitude: 35.72228384013804
+    longitude: 139.7710394524156
   }
   nearby_pokemon {
     pokedex_number: 16
     distance_meters: 66.6501617
-    encounter_id: 3736514205779371933
+    encounter_id: 3736514205889371933
   }
   nearby_pokemon {
     pokedex_number: 23
     distance_meters: 39.9386024
-    encounter_id: 11920471587787242045
+    encounter_id: 11920471590087242045
   }
   nearby_pokemon {
     pokedex_number: 16
     distance_meters: 187.871918
-    encounter_id: 16166789686213094285
+    encounter_id: 16166789686219994285
   }
   nearby_pokemon {
     pokedex_number: 16
     distance_meters: 100.023682
-    encounter_id: 9311930619380324749
+    encounter_id: 9311935069380324749
   }
 }
 
@@ -1123,12 +1066,12 @@ The `nearby_pokmon` messages likely populate the game's "Nearby Pokémon" paw-ma
 
 ```protobuf
 catchable_pokemon {
-    spawnpoint_id: "1502b95d46b"
-    encounter_id: 11920471587787242045
+    spawnpoint_id: "1502bffd46b"
+    encounter_id: 11920471590087242045
     pokedex_type_id: 23
     expiration_time_ms: 1467995429388
-    latitude: 31.809633672823804
-    longitude: 34.784133970545241
+    latitude: 35.72228384013804
+    longitude: 139.7710394524156
   }
 ```
 
@@ -1169,10 +1112,10 @@ request_id_maybe: 1764153216922026362
 repeated_message {
   request_type_maybe: 106
   additonal_data_maybe {
-    cell_id: 1513976129680048128
+    cell_id: -8520171482234486784
     since_time_ms: 1467995033798
-    latitude: 31.80976676940918
-    longitude: 34.784526824951172    
+    latitude: 28.739668607711792
+    longitude: 77.19470620155334
   }
 }
 auth_maybe: "\n@\'\334W\245C\247\200\033...."
@@ -1241,7 +1184,7 @@ As for the second mystery - the cell identifier - we can use the extracted proto
 Naturally, Pokémon Go needs to split the map around the player into logical parts it can work with, so this makes sense. How can we generate cell IDs based on coordinates? Thankfully, a very helpful person [developed an open-source library](https://github.com/gojekfarm/s2-calc) that converts between coordinates and the s2 cell identifier they reside in given the appropriate level.
 
 <figure>
-  <img style="display:block; margin-left: auto; margin-right: auto" src="/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-s2-Cell.png" title="">
+  <img style="display:block; margin-left: auto; margin-right: auto" src="/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-s2-Cell-2.png" title="">
   <figcaption style="text-align: center; font-size:14px; color: gray"><i>The s2 cell requested above</i></figcaption>
 </figure>
 
@@ -1347,29 +1290,29 @@ def main(latitude: float, longitude: float, id_token: str):
       print(f"\tThere's a {POKEDEX[Pokémon.pokedex_type_id]} at {Pokémon.latitude}, {Pokémon.longitude}! It will be there until {time.ctime(Pokémon.expiration_time_ms / 1000.)}")
 ``` 
 
-Upon running our scanner with a sample input: `main(31.8034643796762, 34.78599966297249, "ey...")`, we're greeted with a detailed Pokémon location list. Time to go hunt some Pidgeys!
+Upon running our scanner with a sample input: `main(55.544044971466064, 9.340780317783356, "ey...")`, we're greeted with a detailed Pokémon location list. Time to go hunt some Pidgeys!
 
 ```
 Received 5 map cells
-Found 2 Pokémon in cell 1513976129680048128
-  There's a Pidgey at 31.804190238685873, 34.785806621877455! It will be there until Wed Aug 3 22:12:13 2016
-  There's a Pidgey at 31.802977163697502, 34.785402967633466! It will be there until Wed Aug 3 21:53:58 2016
+Found 2 Pokémon in cell -8520171482234486784
+  There's a Pidgey at 55.54420221095801, 9.34093992696619! It will be there until Wed Aug 3 22:12:13 2016
+  There's a Pidgey at 55.54435278097566, 9.34009901287016! It will be there until Wed Aug 3 21:53:58 2016
 ...
 ```
 
 # Doom Approaches...
 The story thus far follows my endeavors in the two weeks succeeding the launch of Pokémon Go. I had refined the scanner further to canvass a broader area than a single coordinate, searching for Pokémon across my entire hometown.
 
-Yet, upon waking on Thursday, August 8th, and checking my scanner, I noticed an error - none of the `GET_MAP_OBJECTS` requests yielded a valid response. Instead, the server returned a nondescript error.
+Yet, upon waking on Wednesday, August 3rd, and checking my scanner, I noticed an error - none of the `GET_MAP_OBJECTS` requests yielded a valid response. Instead, the server returned a nondescript error.
 
-Confused, I reinstated the protocol capture setup and connected my phone, only to discover that the communication, while present, was no longer in the recognized protobuf format. What's going on?
+Confused, I reinstated the protocol capture setup and connected my phone, only to discover that isn't working anymore. What's going on?
 
 Checking online, the Pokémon Go (fan) developers subreddit had already [an announcement addressing this issue](https://www.reddit.com/r/pokemongodev/comments/4w1cvr/pokemongo_current_api_status/), alongside numerous posts by people who tried to do similar projects and encountered an identical error since midnight. A detail I overlooked that they noticed is that an update had been rolled for the Pokémon Go app overnight. Attempts to revert to an older version didn't work, as the server actively refused connections unless the latest updated app was used.
 
-I ventured into the subreddit's Discord server and entered discussions about the situation. It became apparent that the Pokémon Go developers had introduced some safeguard mechanism that, not only encrypts the protobuf communication but also blocks custom implementations of the protocol.
+I ventured into the subreddit's Discord server and entered discussions about the situation. It became apparent that the Pokémon Go developers had introduced some safeguard mechanism that blocks custom implementations of the protocol.
 
 Unbeknownst to me at the time, I was about to join on a 3-day adventure together with multiple hackers, during which we would reverse engineering and navigate through mounds of Dalvik and assembly code to overcome these protection mechanisms, all coordinated through voice calls and chat channels amidst a large audience of thousands of Pokémon Go enthusiasts eager for a breakthrough.
 
-In the next installment of this blog, we'll cover the work of this endeavor: the security measures unveiled, the strategies and techniques devised to circumvent them, the pivotal moment of the breakthrough during the midnight of the second day, and the origins of our collective group name - Team Unknown 6.
+In the next installment of this blog, we'll cover the work of this endeavor: the security measures unveiled, the strategies and techniques devised to circumvent them, the pivotal moment of the breakthrough during the middle of the second day, and the origins of our collective group name - Team Unknown6.
 
 Stay tuned!
