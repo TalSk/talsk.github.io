@@ -1096,7 +1096,7 @@ Evidently, the Pokémon Go app receives the exact Pokémon location data, contra
 With the groundwork already laid, I'm already on the verge of creating a Pokémon scanner by leveraging the following insights:
 
 1. Pokémon Go's communication with its server is mediated through a protobuf-based RPC.
-2. The client uses message type 106 (`GET_MAP_OBJECTS`) to fetche map details.
+2. The client uses message type 106 (`GET_MAP_OBJECTS`) to fetch map details.
 3. This message requires a cell identifier and a pair of coordinates, and its response contains the exaxct location of catchable Pokémon within the cell.
 
 Yet, we still have two mysteries unsolved:
