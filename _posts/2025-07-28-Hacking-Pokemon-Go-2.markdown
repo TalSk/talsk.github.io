@@ -2,10 +2,10 @@
 layout: post_with_toc
 title:  "Breaking Pokémon Go Anti-Cheating System - Part 2"
 subtitle: "Overcoming Niantic's Anti Cheating Mechanism"
-date:   2025-08-09 21:30:34 +0300
+date:   2025-08-03 21:30:34 +0300
 tags: [RE, gaming, android, Pokémon-go, DEFCON]
 readtime: true
-cover-img: ["/assets/images/PokemonGo-Hacking-P2/PokemonGo-Hacking-P2-cover.png"]
+cover-img: ["/assets/images/PokemonGo-Hacking-P2/PokemonGo-Hacking-P2-cover.jpeg"]
 thumbnail-img: "/assets/images/PokemonGo-Hacking-P2/PokemonGo-Hacking-P2-thumbnail.png"
 share-img: "/assets/images/PokemonGo-Hacking-P2/PokemonGo-Hacking-P2-thumbnail.png"
 toc: true
