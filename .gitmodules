@@ -1,0 +1,6 @@
+[submodule "assets/lib"]
+	path = assets/lib
+	url = https://github.com/cotes2020/chirpy-static-assets.git
+[submodule "_drafts"]
+	path = _drafts
+	url = git@github-personal:TalSk/blog-drafts.git
