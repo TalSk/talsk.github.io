@@ -36,5 +36,8 @@ assets_parent
 assets/images/images
 _drafts_backup
 
+# Local drafts (was a submodule; kept out of the public repo)
+_drafts/
+
 # AI
 .cursor
