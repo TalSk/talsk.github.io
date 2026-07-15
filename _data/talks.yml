@@ -57,24 +57,25 @@
   event: "SnowFROC 2025"
   description: "The OWASP NHI Top 10 talk (same as LASCON). No recording available."
 
+# ---------- 2024 ----------
+- title: "Google's Not Being Ghosted from Vulnerabilities"
+  date: "2024-05-01"
+  event: "N2K Networks (podcast)"
+  video: "https://www.youtube.com/watch?v=ggfD-Ta89EU"
+  description: "Podcast appearance discussing the GhostToken 0-day."
+
 # ---------- 2023 ----------
+- title: "Ghost Token (Ep. 80)"
+  date: "2023-09-01"
+  event: "The Hacker Mind (podcast)"
+  link: "https://open.spotify.com/episode/7Ff0ZmxbxDZJqK7DU2QBbR"
+  description: "The Hacker Mind episode on the GhostToken 0-day."
+
 - title: "GhostToken: Exploiting GCP Application Infrastructure to Create Invisible, Unremovable Trojan Apps"
   date: "2023-08-11"
   event: "DEF CON 31"
   video: "https://www.youtube.com/watch?v=ZAZvIEIjGYU"
   description: "A 0-day in Google Cloud Platform that turned OAuth apps into unremovable trojans on any Google account."
-
-- title: "Google's Not Being Ghosted from Vulnerabilities"
-  date: "2023-04-15"   # approximate — exact date unknown
-  event: "N2K Networks (podcast)"
-  video: "https://www.youtube.com/watch?v=ggfD-Ta89EU"
-  description: "Podcast appearance discussing the GhostToken 0-day."
-
-- title: "Ghost Token (Ep. 80)"
-  date: "2023-04-01"   # approximate — exact date unknown
-  event: "The Hacker Mind (podcast)"
-  link: "https://open.spotify.com/episode/7Ff0ZmxbxDZJqK7DU2QBbR"
-  description: "The Hacker Mind episode on the GhostToken 0-day."
 
 - title: "On Interactive Proofs of Proximity with Proof-Oblivious Queries"
   date: "2023-01-01"
