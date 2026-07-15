@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP5C03"
-subtitle: "Episode 005 - Challenge 03 - The Final Challenge"
-date:   2024-12-09 10:05:34 +0300
-tags: [CTF, RE, research, hacking-google, morse]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep05-C3-hacking-google.png"
+title: "H4CK1NG G00GL3 - EP5C03"
+date: 2024-12-09 10:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "RE", "research", "hacking-google", "morse"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 I'm on the final challenge of the CTF! And what a wild ride it has been. 

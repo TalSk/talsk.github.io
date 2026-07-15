@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP5C02"
-subtitle: "Episode 005 - Challenge 02 - Cryptography is Easy, I swear!"
-date:   2024-11-27 11:05:34 +0300
-tags: [CTF, RE, research, hacking-google, cryptography]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep05-C2-game.png"
+title: "H4CK1NG G00GL3 - EP5C02"
+date: 2024-11-27 11:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "RE", "research", "hacking-google", "cryptography"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 The second exericse of the last episode features a fun little "Chrome-is-offline" game of the Project Zero team capturing bugs (and avoiding walls, I wonder if there's an analogy there) at `https://pzero-adventures-web.h4ck.ctfcompetition.com/`. 

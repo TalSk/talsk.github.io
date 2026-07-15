@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP0C01"
-subtitle: "Episode 000 - Challenge 01 - Playing Chess"
-date:   2024-08-23 16:05:34 +0300
-tags: [CTF, web-exploitation, research, hacking-google, chess]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep00-C01-won-board.png"
+title: "H4CK1NG G00GL3 - EP0C01"
+date: 2024-08-23 16:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "web-exploitation", "research", "hacking-google", "chess"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 A web site with some cool matrix-looking chess. Let's try to play a little.

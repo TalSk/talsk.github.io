@@ -1,9 +1,8 @@
 ---
-layout: page
-title: About
-permalink: /about
+# the default layout is 'page'
+icon: fas fa-info-circle
+order: 4
 ---
-
 
 In the past decade, I turned my hacking hobby into a career. My interests and experience include (but are not limited to) reverse engineering, malware analysis, embedded security, web hacking, cryptography, and computational complexity. I also teach a biannual workshop on assembly, reverse engineering x86/x64, and black box research.
 

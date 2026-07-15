@@ -1,14 +1,9 @@
 ---
-layout: post_with_toc
-title:  "Breaking Pokémon Go Anti-Cheating System - Part 1"
-subtitle: "Filling the Pokédex was never that easy"
-date:   2024-04-06 11:05:34 +0300
-tags: [RE, gaming, android, Pokémon-go]
-readtime: true
-cover-img: ["/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-cover4.png"]
-thumbnail-img: "/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-thumbnail.png"
-share-img: "/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-thumbnail.png"
-toc: true
+title: "Breaking Pokémon Go Anti-Cheating System - Part 1"
+date: 2024-04-06 11:05:34 +0300
+categories: ["Blog"]
+tags: ["RE", "gaming", "android", "Pokémon-go"]
+image: "/assets/images/PokemonGo-Hacking-P1/PokemonGo-Hacking-P1-cover4.png"
 ---
 
 # Intro

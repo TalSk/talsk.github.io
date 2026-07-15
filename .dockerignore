@@ -1,0 +1,15 @@
+.git
+.gitignore
+_site
+.jekyll-cache
+.jekyll-metadata
+.bundle
+vendor
+*.gem
+node_modules
+deprecated
+alternatives
+.cursor
+README.md
+DRAFTS.md
+LICENSE

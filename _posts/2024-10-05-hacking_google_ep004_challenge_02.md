@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP4C02"
-subtitle: "Episode 004 - Challenge 02 - Custom Auth Carelessness"
-date:   2024-10-12 11:05:34 +0300
-tags: [CTF, research, hacking-google, cryptography]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep04-C2-flag.png"
+title: "H4CK1NG G00GL3 - EP4C02"
+date: 2024-10-12 11:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "research", "hacking-google", "cryptography"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 So as described in the previous challenge, I actually solved this one beforehand, and it's pretty short and sweet.

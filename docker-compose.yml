@@ -1,0 +1,14 @@
+# Local dev: mount source so you can edit and see changes without rebuilding.
+# First time (or after changing Gemfile/Dockerfile): docker compose build
+# Then: docker compose up
+# Edit files on your machine; Jekyll will rebuild and the browser will refresh.
+
+services:
+  jekyll:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/srv/jekyll
+    environment:
+      - JEKYLL_ENV=development

@@ -1,14 +1,9 @@
 ---
-layout: post_with_toc
-title:  "Tal's DEF CON 32 Solo Watch Party"
-subtitle: "Grab your popcorn, it's going to be good!"
-date:   2024-11-13 11:05:34 +0300
-tags: [Research, DEFCON, DEFCON-32]
-readtime: true
-cover-img: ["/assets/images/DEFCON-32-Solo-Watch-Party/DEFCON-32-Solo-Watch-Party-cover.webp"]
-thumbnail-img: "/assets/images/DEFCON-32-Solo-Watch-Party/DEFCON-32-Solo-Watch-Party-thumbnail.webp"
-share-img: "/assets/images/DEFCON-32-Solo-Watch-Party/DEFCON-32-Solo-Watch-Party-thumbnail.webp"
-toc: true
+title: "Tal's DEF CON 32 Solo Watch Party"
+date: 2024-11-13 11:05:34 +0300
+categories: ["Blog"]
+tags: ["research", "DEFCON", "DEFCON-32"]
+image: "/assets/images/DEFCON-32-Solo-Watch-Party/DEFCON-32-Solo-Watch-Party-cover.webp"
 ---
 
 # Intro(spective)

@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP2C01"
-subtitle: "Episode 002 - Challenge 01 - Gaming Images"
-date:   2024-09-12 12:05:34 +0300
-tags: [CTF, research, hacking-google, steganography, cryptography]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep02-C01-challenge.png"
+title: "H4CK1NG G00GL3 - EP2C01"
+date: 2024-09-12 12:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "research", "hacking-google", "steganography", "cryptography"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 After beating Episode 1, I've been pretty pumped to see what comes next. The difficulty curve of this CTF so far is pretty unexpected. Some challenges I feel are straightforward, whereas others are quite difficult or simply have pretty obscure solutions.

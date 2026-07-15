@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP4C03"
-subtitle: "Episode 004 - Challenge 03 - Git Good"
-date:   2024-10-19 10:05:34 +0300
-tags: [CTF, research, hacking-google, git]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep04-C3-contributing.png"
+title: "H4CK1NG G00GL3 - EP4C03"
+date: 2024-10-19 10:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "research", "hacking-google", "git"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 Wrapping up this episode's challenges, in this one I get a hint:

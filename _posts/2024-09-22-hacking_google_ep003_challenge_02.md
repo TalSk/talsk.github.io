@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP3C02"
-subtitle: "Episode 003 - Challenge 02 - Breaking Out on an Adventure"
-date:   2024-09-27 11:05:34 +0300
-tags: [CTF, research, hacking-google, python, sandbox-escape]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep03-C2-shell-sprinter.png"
+title: "H4CK1NG G00GL3 - EP3C02"
+date: 2024-09-27 11:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "research", "hacking-google", "python", "sandbox-escape"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 In this challenge - yet again another domain to `socat` to: 

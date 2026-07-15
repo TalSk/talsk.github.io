@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP1C03"
-subtitle: "Episode 001 - Challenge 03 - Serializing Chess"
-date:   2024-09-08 12:05:34 +0300
-tags: [CTF, research, hacking-google, lfi, php, serialization]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
+title: "H4CK1NG G00GL3 - EP1C03"
+date: 2024-09-08 12:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "research", "hacking-google", "lfi", "php", "serialization"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 Clicking on the next challenge, I was welcomed by a familiar sight - it's the same matrix chess game from the first challlenge of the first episode!

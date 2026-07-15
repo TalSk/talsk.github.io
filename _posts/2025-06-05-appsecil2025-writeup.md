@@ -1,15 +1,11 @@
 ---
-layout: post
-title:  "AppSec IL 2025 CTF - Writeup"
-subtitle: "A writeup on all challenges I solved in the 2025 OWASP CTF"
-date:   2025-06-04 10:05:34 +0300
-tags: [CTF, appsecil2025, write-up, hacking]
-readtime: true
-cover-img: ["/assets/images/Appsecil2025-Writeup/Appsecil2025-Writeup-cover.png"]
-thumbnail-img: "/assets/images/Appsecil2025-Writeup/Appsecil2025-Writeup-share.png"
-share-img: "/assets/images/Appsecil2025-Writeup/Appsecil2025-Writeup-share.png"
+title: "AppSec IL 2025 CTF - Writeup"
+date: 2025-06-04 10:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "appsecil2025", "write-up", "hacking"]
+image: "/assets/images/Appsecil2025-Writeup/Appsecil2025-Writeup-cover.png"
 ---
- 
+
 This year's AppSec IL 2025 had a CTF accompanying it during the 3 days before the event.
 
 I participated alone (hence why my team was "Loner"), and ended up placing 4th! Much better results than I expected.

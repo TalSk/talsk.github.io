@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP3C03"
-subtitle: "Episode 003 - Challenge 03 - Android Corgis"
-date:   2024-10-03 10:05:34 +0300
-tags: [CTF, research, hacking-google, reverse-engineering, android, jadx, qrcode]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep03-C3-corgi.png"
+title: "H4CK1NG G00GL3 - EP3C03"
+date: 2024-10-03 10:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "research", "hacking-google", "reverse-engineering", "android", "jadx", "qrcode"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 Aaaand we're back to zipped challenges. This time, it's an image and an apk file.

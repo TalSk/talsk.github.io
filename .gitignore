@@ -1,5 +1,40 @@
-_site
-.sass-cache
+# Bundler cache
+.bundle
+vendor
+Gemfile.lock
+
+# Jekyll cache
 .jekyll-cache
 .jekyll-metadata
-vendor
+_site
+
+# RubyGems
+*.gem
+
+# NPM dependencies
+node_modules
+package-lock.json
+
+# IDE configurations
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Misc
+_sass/vendors
+assets/js/dist
+
+
+# Deprecated
+alternatives
+deprecated
+
+# Pre-Chirpy-migration backups (content verified duplicated in assets/images and _drafts)
+assets_parent
+assets/images/images
+_drafts_backup
+
+# AI
+.cursor

@@ -1,0 +1,71 @@
+/* Responsive content width for desktop / 2K+
+ * The theme wraps the .row in a .container with its own max-width;
+ * we must widen both so the content area actually grows.
+ */
+#main-wrapper .container,
+#main-wrapper .row {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+  #main-wrapper .container,
+  #main-wrapper .row {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1400px) {
+  #main-wrapper .container,
+  #main-wrapper .row {
+    max-width: 1250px;
+  }
+}
+
+@media (min-width: 1600px) {
+  #main-wrapper .container,
+  #main-wrapper .row {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 1920px) {
+  #main-wrapper .container,
+  #main-wrapper .row {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 2560px) {
+  #main-wrapper .container,
+  #main-wrapper .row {
+    max-width: 2000px;
+  }
+}
+
+/* Center images and code blocks in the content area */
+.content figure:has(img) {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.content .img-link {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content .highlight,
+.content pre {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

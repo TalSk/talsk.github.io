@@ -1,14 +1,9 @@
 ---
-layout: post_with_toc
-title:  "Using Your Dead Phone to Get Rid of Ads at Home"
-subtitle: "The story of how I destroyed my OnePlus 5T"
-date:   2024-02-17 10:13:01 +0300
-tags: [DYI, PiHole, Smartphone, ADB, OnePlus]
-readtime: true
-cover-img: ["/assets/images/Broken-OnePlus/Broken-OnePlus-cover.png"]
-thumbnail-img: "/assets/images/Broken-OnePlus/Broken-OnePlus-thumbnail2.jpg"
-share-img: "/assets/images/Broken-OnePlus/Broken-OnePlus-Measured.jpg"
-toc: true
+title: "Using Your Dead Phone to Get Rid of Ads at Home"
+date: 2024-02-17 10:13:01 +0300
+categories: ["Blog"]
+tags: ["DYI", "PiHole", "Smartphone", "ADB", "OnePlus"]
+image: "/assets/images/Broken-OnePlus/Broken-OnePlus-cover.png"
 ---
 
 Similarly to the common cooking recipes seen online, I'll start this "How-to-get-rids-of-ads" recipe with a heartfelt and winding story.

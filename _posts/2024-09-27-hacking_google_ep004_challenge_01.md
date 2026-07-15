@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP4C01"
-subtitle: "Episode 004 - Challenge 01 - When Write becomes Read"
-date:   2024-10-09 09:05:34 +0300
-tags: [CTF, research, hacking-google, exploit, web]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep04-C1-website.png"
+title: "H4CK1NG G00GL3 - EP4C01"
+date: 2024-10-09 09:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "research", "hacking-google", "exploit", "web"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 Starting off episode 4, I learned from past mistakes and paid a bit more attention to the video. This time, it covers Google's bug bounty program - an effort to pay white-hat hackers to catch the vulnerabilities before the bad guys do.

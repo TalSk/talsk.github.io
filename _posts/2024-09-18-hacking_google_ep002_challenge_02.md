@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP2C02"
-subtitle: "Episode 002 - Challenge 02 - Timesketch Doesn't Like WSL"
-date:   2024-09-21 14:05:34 +0300
-tags: [CTF, RE, research, hacking-google, forensic-analysis, compromise, timesketch]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
+title: "H4CK1NG G00GL3 - EP2C02"
+date: 2024-09-21 14:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "RE", "research", "hacking-google", "forensic-analysis", "compromise", "timesketch"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 Well...That was a weird one - kind of solved it before I even started writing a log. 

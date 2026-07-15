@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP1C01"
-subtitle: "Episode 001 - Challenge 01 - Brute-force Decryption"
-date:   2024-08-25 15:05:34 +0300
-tags: [CTF, RE, research, hacking-google, cryptography]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
+title: "H4CK1NG G00GL3 - EP1C01"
+date: 2024-08-25 15:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "RE", "research", "hacking-google", "cryptography"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 So I've passed the first episode (and got a token with my name in reward!). I watched the chapter's video (very well produced, by the way), and I expect some reverse engineering efforts. Anyway, let's dig in.

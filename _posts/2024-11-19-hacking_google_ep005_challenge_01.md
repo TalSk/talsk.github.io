@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP5C01"
-subtitle: "Episode 005 - Challenge 01 - A Blast From the 90s"
-date:   2024-11-20 09:05:34 +0300
-tags: [CTF, RE, research, hacking-google, tamagotchi, binary-analysis, bmp]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Ep05-C1-done.bmp"
+title: "H4CK1NG G00GL3 - EP5C01"
+date: 2024-11-20 09:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "RE", "research", "hacking-google", "tamagotchi", "binary-analysis", "bmp"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 It's episode 5, baby! This is the last one on this CTF, and what a road it has been so far!

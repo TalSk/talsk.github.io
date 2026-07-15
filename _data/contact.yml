@@ -1,0 +1,20 @@
+#  The contact options.
+
+- type: github
+  icon: "fab fa-github"
+
+- type: twitter
+  icon: "fa-brands fa-x-twitter"
+
+- type: linkedin
+  icon: "fab fa-linkedin"
+  url: "https://linkedin.com/in/reverser"
+
+- type: bluesky
+  icon: "fa-brands fa-bluesky"
+  url: "https://bsky.app/profile/taltechtreks.com"
+
+- type: feed
+  icon: "fas fa-rss"
+  url: "https://taltechtreks.com/feed.xml"
+  noblank: true

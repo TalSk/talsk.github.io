@@ -1,13 +1,9 @@
 ---
-layout: post
-title:  "H4CK1NG G00GL3 - EP1C02"
-subtitle: "Episode 001 - Challenge 02 - 10 Seconds to Killswitch"
-date:   2024-08-26 15:05:34 +0300
-tags: [CTF, RE, research, hacking-google, cryptography]
-readtime: true
-cover-img: ["/assets/images/Hacking-Google/Hacking-Google-Cover.png"]
-thumbnail-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
-share-img: "/assets/images/Hacking-Google/Hacking-Google-Thumbnail.png"
+title: "H4CK1NG G00GL3 - EP1C02"
+date: 2024-08-26 15:05:34 +0300
+categories: ["Blog"]
+tags: ["CTF", "RE", "research", "hacking-google", "cryptography"]
+image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
 
 Downloading the next challenge, I got a file with a long name again `a5eecbd1dc5ad07e38b062cdabfb3e63da36847e727fa666903f9dc1094e24160d68d0ed95378102ae20c7bca84f3638825c4433833b08886f918b7fa90fec56`.
