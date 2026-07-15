@@ -1,13 +1,27 @@
-# Talks timeline — rendered by _tabs/talks.md (newest first; sorted by date automatically).
-# Fields per talk:
+# Talks & appearances timeline — rendered by _tabs/talks.md (newest first; sorted by date).
+# Fields per entry:
 #   title       (required)
 #   date        (required) "YYYY-MM-DD" — only month/year is shown, but the full date sets the order
-#   event       venue / conference (e.g. "DEF CON 33")
-#   video       URL to the recording
-#   slides      URL to the slides/deck
-#   link        URL to a details/abstract page (shown as "Details")
+#   event       venue / conference / podcast
+#   video       URL to the recording  -> shown as "Watch"
+#   slides      URL to the slides      -> shown as "Slides"
+#   link        URL to a details/abstract/episode page -> shown as "Details"
 #   description one-line summary (optional)
-# Add, edit, or remove entries freely.
+#
+# NOTE: dates/titles marked "TODO" are my best guess — please confirm/adjust.
+
+# ---------- 2025 ----------
+- title: "Exposing the OWASP Non-Human Identity Top 10: Risks, Realities, and AI Impacts"
+  date: "2025-10-01"   # TODO confirm exact date (LASCON XV, Oct 2025)
+  event: "LASCON 2025"
+  video: "https://www.youtube.com/watch?v=HMJt5hEXkk0"
+  description: "How the OWASP Non-Human Identity Top 10 was built — methodology, rankings, and live demos of the top risks. With Tomer Yahalom."
+
+- title: "Breakin' 'Em All – Overcoming Pokémon GO's Anti-Cheat Mechanism"
+  date: "2025-09-01"   # TODO confirm exact Reversim Summit 2025 date
+  event: "Reversim Summit 2025"
+  video: "https://www.youtube.com/watch?v=njlcLQIm8t8"
+  description: "Reverse-engineering Pokémon GO's anti-cheat and network protocol (the Reversim Summit talk)."
 
 - title: "Breakin' 'Em All – Overcoming Pokémon GO's Anti-Cheat Mechanism"
   date: "2025-08-08"
@@ -15,24 +29,55 @@
   video: "https://www.youtube.com/watch?v=2En96Cg9BFw"
   description: "Reverse-engineering Pokémon GO's anti-cheat and network protocol from scratch."
 
+- title: "Sub:jugation – Hijacking Cloud Identities by Recycling Namespaces in Global OIDC Issuers"
+  date: "2025-07-01"   # TODO confirm — fwd:cloudsec 2025 vs 2026
+  event: "fwd:cloudsec"
+  video: "https://www.youtube.com/watch?v=aVLG_PATkmQ"
+  description: "A vulnerability class in global OIDC issuers (GitHub Actions, GitLab CI, Terraform Cloud) that lets attackers reclaim deleted namespaces and mint tokens matching cloud IAM trust policies."
+
+- title: "AI Hacking Village talk"   # TODO add the real talk title
+  date: "2025-06-01"   # TODO confirm BSides TLV 2025 date
+  event: "AI Hacking Village · BSides TLV 2025"
+  link: "https://www.aihackingvillage.com/"
+
+- title: "Non-Human Identity Security: Insights from 800 Security Professionals"
+  date: "2025-04-29"   # TODO confirm exact RSAC USA 2025 session date
+  event: "RSAC 2025"
+  link: "https://www.rsaconference.com/Library/presentation/USA/2025/NonHuman%20Identity%20Security%20Insights%20from%20800%20Security%20Professionals"
+  description: "Findings on non-human identity security drawn from a survey of 800 security professionals."
+
+- title: "Non-Human Identity Top 10 — guest segment"
+  date: "2025-03-27"
+  event: "CyberWire Daily (podcast)"
+  link: "https://thecyberwire.com/podcasts/daily-podcast/2274/notes"
+  description: "Guest on CyberWire Daily (ep. 2274) discussing the OWASP NHI Top 10."
+
+- title: "OWASP Non-Human Identity Top 10"
+  date: "2025-03-01"   # TODO confirm SnowFROC 2025 date
+  event: "SnowFROC 2025"
+  description: "The OWASP NHI Top 10 talk (same as LASCON). No recording available."
+
+# ---------- 2023 ----------
 - title: "GhostToken: Exploiting GCP Application Infrastructure to Create Invisible, Unremovable Trojan Apps"
   date: "2023-08-11"
   event: "DEF CON 31"
   video: "https://www.youtube.com/watch?v=ZAZvIEIjGYU"
   description: "A 0-day in Google Cloud Platform that turned OAuth apps into unremovable trojans on any Google account."
 
-# ---- Add your other talks below (fill in real dates/links, then delete these examples) ----
-# - title: "Breakin' 'Em All – Overcoming Pokémon GO's Anti-Cheat Mechanism"
-#   date: "2025-09-01"           # <-- set the real Reversim Summit date
-#   event: "Reversim Summit 2025"
-#   link: "https://summit2025.reversim.com/speaker/tal-skverer/"
-#
-# - title: "GhostToken"
-#   date: "2023-05-01"           # <-- set the real date
-#   event: "RSAC"
-#   slides: ""                    # <-- link to slides if available
-#
-# - title: ""
-#   date: "YYYY-MM-DD"
-#   event: "BSides / OWASP chapter"
-#   video: ""
+- title: "Google's Not Being Ghosted from Vulnerabilities"
+  date: "2023-04-01"   # TODO confirm episode date
+  event: "N2K Networks (podcast)"
+  video: "https://www.youtube.com/watch?v=ggfD-Ta89EU"
+  description: "Podcast appearance discussing the GhostToken 0-day."
+
+- title: "Ghost Token (Ep. 80)"
+  date: "2023-04-01"   # TODO confirm show name + date
+  event: "Podcast"
+  link: "https://open.spotify.com/episode/7Ff0ZmxbxDZJqK7DU2QBbR"
+  description: "Podcast episode on the GhostToken 0-day."
+
+- title: "On Interactive Proofs of Proximity with Proof-Oblivious Queries"
+  date: "2023-01-01"   # TODO confirm date (ITCS 2023 / Simons Institute)
+  event: "Simons Institute"
+  video: "https://www.youtube.com/watch?v=AuBxSSbUeGk"
+  description: "My theoretical-CS research on interactive proofs of proximity (ITCS 2023)."
