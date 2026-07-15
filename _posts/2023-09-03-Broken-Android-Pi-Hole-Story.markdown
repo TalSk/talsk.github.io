@@ -192,7 +192,7 @@ After rebooting the phone again, [scrcpy](https://github.com/Genymobile/scrcpy) 
 
 Unlike previous steps, this one didn't pose much of a challenge. Following the [guide I mentioned](https://medium.com/@inatagan/how-to-install-linux-and-pi-hole-to-any-android-device-e2852fb38c54) was a breeze:
 
-I installed [Busybox](https://github.com/meefik/busybox) and then [Linux-deploy](https://github.com/meefik/linuxdeploy). I set up a Debian machine (with properties that deviated a little from the guide, see [Appendix A](Appendix A)). Pressed *Install* from the top right menu and then the *START* button on the bottom and I have the machine running, not forgetting to allow the app root access by accepting the Magisk pop-up.
+I installed [Busybox](https://github.com/meefik/busybox) and then [Linux-deploy](https://github.com/meefik/linuxdeploy). I set up a Debian machine (with properties that deviated a little from the guide, see [Appendix A](#appendix-a---configuration-of-linux-deploy)). Pressed *Install* from the top right menu and then the *START* button on the bottom and I have the machine running, not forgetting to allow the app root access by accepting the Magisk pop-up.
 
 From my PC, `$ ssh tal@192.168.3.106 -p 22` to connect to the phone via SSH (after connecting the phone to the home local network, of course. You can find the IP in multiple ways, and the easiest one would be through the phone's Wi-Fi settings page).
 
@@ -260,7 +260,7 @@ I must also admit that over the past year, I experienced numerous outages caused
 
 These two things highlight that hosting servers on your own is hard. Not only that you have to put a watchful eye on them and update them regularly, but when things break you have to put a chunk of personal time aside to fix whatever's broken.
 
-To this day, I don't know the cause of the random outages. They were exceptionally annoying since besides the server being down, the phone deleted the `adb_keys` file so it "forgot" my PC and didn't let me `adb` into it. This happened so frequently that I had to write a web server to always run on the phone (using [Termux](https://termux.dev/en/)) which essentially gives read/write access to the `adb_keys` (requiring a password, of course). See [Appendix B](Appendix B) to see what angry coding looks like.
+To this day, I don't know the cause of the random outages. They were exceptionally annoying since besides the server being down, the phone deleted the `adb_keys` file so it "forgot" my PC and didn't let me `adb` into it. This happened so frequently that I had to write a web server to always run on the phone (using [Termux](https://termux.dev/en/)) which essentially gives read/write access to the `adb_keys` (requiring a password, of course). See [Appendix B](#appendix-b---overcoming-the-adb_keys-issue) to see what angry coding looks like.
 
 Despite all the challenges, the experience was incredibly educational, offering insights into networking and the Android operating system. The whole journey, fraught with trials, errors, and learning, highlights the adventurous spirit of tech enthusiasts. It's a testament to the saying, "Necessity is the mother of invention," and perhaps a reminder of the joys and perils of DIY tech solutions.
 
