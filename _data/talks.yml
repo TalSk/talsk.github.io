@@ -1,0 +1,38 @@
+# Talks timeline — rendered by _tabs/talks.md (newest first; sorted by date automatically).
+# Fields per talk:
+#   title       (required)
+#   date        (required) "YYYY-MM-DD" — only month/year is shown, but the full date sets the order
+#   event       venue / conference (e.g. "DEF CON 33")
+#   video       URL to the recording
+#   slides      URL to the slides/deck
+#   link        URL to a details/abstract page (shown as "Details")
+#   description one-line summary (optional)
+# Add, edit, or remove entries freely.
+
+- title: "Breakin' 'Em All – Overcoming Pokémon GO's Anti-Cheat Mechanism"
+  date: "2025-08-08"
+  event: "DEF CON 33"
+  video: "https://www.youtube.com/watch?v=2En96Cg9BFw"
+  description: "Reverse-engineering Pokémon GO's anti-cheat and network protocol from scratch."
+
+- title: "GhostToken: Exploiting GCP Application Infrastructure to Create Invisible, Unremovable Trojan Apps"
+  date: "2023-08-11"
+  event: "DEF CON 31"
+  video: "https://www.youtube.com/watch?v=ZAZvIEIjGYU"
+  description: "A 0-day in Google Cloud Platform that turned OAuth apps into unremovable trojans on any Google account."
+
+# ---- Add your other talks below (fill in real dates/links, then delete these examples) ----
+# - title: "Breakin' 'Em All – Overcoming Pokémon GO's Anti-Cheat Mechanism"
+#   date: "2025-09-01"           # <-- set the real Reversim Summit date
+#   event: "Reversim Summit 2025"
+#   link: "https://summit2025.reversim.com/speaker/tal-skverer/"
+#
+# - title: "GhostToken"
+#   date: "2023-05-01"           # <-- set the real date
+#   event: "RSAC"
+#   slides: ""                    # <-- link to slides if available
+#
+# - title: ""
+#   date: "YYYY-MM-DD"
+#   event: "BSides / OWASP chapter"
+#   video: ""

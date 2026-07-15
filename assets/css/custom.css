@@ -79,3 +79,64 @@
   margin-right: auto;
   display: block;
 }
+
+/* ===== Talks Archives timeline (_tabs/talks.md + _data/talks.yml) ===== */
+#talks .year {
+  font-size: 1.5rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+#talks ul {
+  list-style: none;
+  margin: 0 0 0 0.5rem;
+  padding: 0;
+  border-left: 2px solid var(--timeline-color);
+}
+
+#talks ul li {
+  position: relative;
+  padding: 0.35rem 0 1.15rem 1.5rem;
+}
+
+#talks ul li::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0.6rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--timeline-node-bg);
+  border: 2px solid var(--timeline-color);
+}
+
+#talks .talk-date {
+  font-size: 0.8rem;
+  letter-spacing: 0.02rem;
+}
+
+#talks .talk-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  margin-top: 0.1rem;
+}
+
+#talks .talk-desc {
+  font-size: 0.95rem;
+  margin-top: 0.15rem;
+}
+
+#talks .talk-links {
+  margin-top: 0.4rem;
+}
+
+#talks .talk-links a {
+  margin-right: 1.1rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+#talks .talk-links a:hover {
+  border-bottom: none;
+}

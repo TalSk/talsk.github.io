@@ -1,0 +1,34 @@
+---
+layout: page
+# A timeline of talks, sourced from _data/talks.yml
+---
+
+{% assign talks = site.data.talks | sort: 'date' | reverse %}
+
+<div id="talks" class="pl-xl-3">
+  {% assign last_year = '' %}
+  {% for talk in talks %}
+    {% assign yr = talk.date | date: '%Y' %}
+    {% if yr != last_year %}
+      {% unless forloop.first %}</ul>{% endunless %}
+      <time class="year lead d-block">{{ yr }}</time>
+      <ul>
+      {% assign last_year = yr %}
+    {% endif %}
+    <li>
+      <span class="talk-date text-muted d-block">{{ talk.date | date: '%B %Y' }}{% if talk.event %} &middot; {{ talk.event }}{% endif %}</span>
+      <span class="talk-title d-block">{{ talk.title }}</span>
+      {% if talk.description %}<span class="talk-desc text-muted d-block">{{ talk.description }}</span>{% endif %}
+      {% if talk.video or talk.slides or talk.link %}
+      <span class="talk-links d-block">
+        {% if talk.video %}<a href="{{ talk.video }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i>&nbsp;Watch</a>{% endif %}
+        {% if talk.slides %}<a href="{{ talk.slides }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-lines"></i>&nbsp;Slides</a>{% endif %}
+        {% if talk.link %}<a href="{{ talk.link }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i>&nbsp;Details</a>{% endif %}
+      </span>
+      {% endif %}
+    </li>
+    {% if forloop.last %}</ul>{% endif %}
+  {% endfor %}
+
+  {% if talks == empty or talks.size == 0 %}<p class="text-muted">No talks listed yet.</p>{% endif %}
+</div>

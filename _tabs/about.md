@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 4
+order: 5
 ---
 
 Over the past decade, I turned my hacking hobby into a career. My interests and experience span reverse engineering, malware analysis, embedded and mobile security, web hacking, cryptography, and computational complexity. I also teach a biannual workshop on assembly, x86/x64 reverse engineering, and black-box research.

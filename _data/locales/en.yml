@@ -11,7 +11,8 @@ tabs:
   home: Home
   categories: Categories
   tags: Tags
-  archives: Archives
+  archives: Post Archives
+  talks: Talks Archives
   about: About
 
 search:
