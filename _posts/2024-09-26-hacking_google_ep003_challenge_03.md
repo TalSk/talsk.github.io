@@ -45,7 +45,7 @@ Browsing directly to this second URL, I get an unauthorized error.
 
 With this direction at a dead end, I went back to the apk file. An "apk" file type actually embeds a whole Android app - it contains everything that the Android system needs in order to run a specific app. So it's enough to have the file in order to install its app on any Android system.
 
-Just recently I happened to wipe the dust off my Android skills by coming back to the [time I built a Pokemon scanner for Pokemon go](https://talsk.github.io/2024/04/06/Hacking-Pokemon-Go.html), but I'm not too eager to run apps on my phone, and whipping up an emulator without a setup is cumbersome.
+Just recently I happened to wipe the dust off my Android skills by coming back to the [time I built a Pokemon scanner for Pokemon go]({% post_url 2023-10-04-Hacking-Pokemon-Go %}), but I'm not too eager to run apps on my phone, and whipping up an emulator without a setup is cumbersome.
 
 Luckily, the common case with Android apps in challenges (compared to "real" apps), is that they're quite short, usually unobfuscated, and sometime contain debug information. This makes them especially easy to reverse engineer only statically.
 

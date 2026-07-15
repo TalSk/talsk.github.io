@@ -8,7 +8,7 @@ image: "/assets/images/PokemonGo-Hacking-P2/PokemonGo-Hacking-P2-cover.jpeg"
 
 # Recall
 
-[Last we left off](/2024/04/06/Hacking-Pokemon-Go.html), I had successfully built a working Pokémon Scanner, having understood the internals of the Pokémon Go protocol: the app communicates using client-server protobuf remote procedure calls, sending a container of multiple request types at once. One specific request type numbered 106 - `GET_MAP_OBJECTS` - retrieves a list of Pokémon around a specific location by its S2 cell identifier.
+[Last we left off]({% post_url 2023-10-04-Hacking-Pokemon-Go %}), I had successfully built a working Pokémon Scanner, having understood the internals of the Pokémon Go protocol: the app communicates using client-server protobuf remote procedure calls, sending a container of multiple request types at once. One specific request type numbered 106 - `GET_MAP_OBJECTS` - retrieves a list of Pokémon around a specific location by its S2 cell identifier.
 
 The scanner worked well for a couple of days, and I enjoyed the fruits of my labor (increasing the number of unique Pokémon I discovered by an order of magnitude).
 
