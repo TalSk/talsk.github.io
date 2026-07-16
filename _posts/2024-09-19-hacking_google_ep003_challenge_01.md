@@ -1,7 +1,7 @@
 ---
 title: "H4CK1NG G00GL3 - EP3C01"
 date: 2024-09-25 15:06:34 +0300
-categories: ["Blog"]
+categories: ["CTF"]
 tags: ["CTF", "RE", "research", "hacking-google", "rfc6749", "oauth2"]
 image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---

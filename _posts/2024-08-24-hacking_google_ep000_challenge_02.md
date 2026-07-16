@@ -1,7 +1,7 @@
 ---
 title: "H4CK1NG G00GL3 - EP0C02"
 date: 2024-08-24 15:05:34 +0300
-categories: ["Blog"]
+categories: ["CTF"]
 tags: ["CTF", "web-exploitation", "research", "hacking-google", "aurora"]
 image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---

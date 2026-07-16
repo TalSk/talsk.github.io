@@ -1,7 +1,7 @@
 ---
 title: "H4CK1NG G00GL3 - EP3C03"
 date: 2024-10-03 10:05:34 +0300
-categories: ["Blog"]
+categories: ["CTF"]
 tags: ["CTF", "research", "hacking-google", "reverse-engineering", "android", "jadx", "qrcode"]
 image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---

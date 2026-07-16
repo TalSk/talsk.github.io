@@ -1,7 +1,7 @@
 ---
 title: "H4CK1NG G00GL3 - EP2C02"
 date: 2024-09-21 14:05:34 +0300
-categories: ["Blog"]
+categories: ["CTF"]
 tags: ["CTF", "RE", "research", "hacking-google", "forensic-analysis", "compromise", "timesketch"]
 image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---

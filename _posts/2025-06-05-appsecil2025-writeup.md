@@ -1,7 +1,7 @@
 ---
 title: "AppSec IL 2025 CTF - Writeup"
 date: 2025-06-04 10:05:34 +0300
-categories: ["Blog"]
+categories: ["CTF"]
 tags: ["CTF", "appsecil2025", "write-up", "hacking"]
 image: "/assets/images/Appsecil2025-Writeup/Appsecil2025-Writeup-cover.png"
 ---

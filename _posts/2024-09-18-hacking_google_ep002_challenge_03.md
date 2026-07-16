@@ -1,7 +1,7 @@
 ---
 title: "H4CK1NG G00GL3 - EP2C03"
 date: 2024-09-23 16:05:34 +0300
-categories: ["Blog"]
+categories: ["CTF"]
 tags: ["CTF", "RE", "research", "hacking-google", "shell", "bash", "sandbox"]
 image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Tal's DEF CON 32 Solo Watch Party"
 date: 2024-11-13 11:05:34 +0300
-categories: ["Blog"]
+categories: ["Review"]
 tags: ["research", "DEFCON", "DEFCON-32"]
 image: "/assets/images/DEFCON-32-Solo-Watch-Party/DEFCON-32-Solo-Watch-Party-cover.webp"
 ---

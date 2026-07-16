@@ -1,7 +1,7 @@
 ---
 title: "H4CK1NG G00GL3 - EP4C03"
 date: 2024-10-19 10:05:34 +0300
-categories: ["Blog"]
+categories: ["CTF"]
 tags: ["CTF", "research", "hacking-google", "git"]
 image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---

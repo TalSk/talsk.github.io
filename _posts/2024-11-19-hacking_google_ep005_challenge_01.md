@@ -1,7 +1,7 @@
 ---
 title: "H4CK1NG G00GL3 - EP5C01"
 date: 2024-11-20 09:05:34 +0300
-categories: ["Blog"]
+categories: ["CTF"]
 tags: ["CTF", "RE", "research", "hacking-google", "tamagotchi", "binary-analysis", "bmp"]
 image: "/assets/images/Hacking-Google/Hacking-Google-Cover.png"
 ---
